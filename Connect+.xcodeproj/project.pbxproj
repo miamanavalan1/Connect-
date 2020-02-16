@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		5E3CABD923E8A76D00A2891E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E3CABD823E8A76D00A2891E /* Assets.xcassets */; };
 		5E3CABDC23E8A76D00A2891E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3CABDA23E8A76D00A2891E /* LaunchScreen.storyboard */; };
 		5E51ACB523EE47E300D3107C /* Font Book.app in Resources */ = {isa = PBXBuildFile; fileRef = 5E51ACB423EE47E300D3107C /* Font Book.app */; };
+		E4AB524B23F996AC001DADB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524A23F996AC001DADB1 /* LoginViewController.swift */; };
+		E4AB524D23F99AB6001DADB1 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */; };
+		E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */; };
 		FC420799EE8B7CDB52E6A358 /* Pods_Connect_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE470013E97EB982ED2521 /* Pods_Connect_.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		96EE470013E97EB982ED2521 /* Pods_Connect_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D083D06D0C379A13C8BBF6 /* Pods-Connect+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect+.release.xcconfig"; path = "Target Support Files/Pods-Connect+/Pods-Connect+.release.xcconfig"; sourceTree = "<group>"; };
 		A8CC47BFE896BFE047D9B561 /* Pods-Connect+.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect+.debug.xcconfig"; path = "Target Support Files/Pods-Connect+/Pods-Connect+.debug.xcconfig"; sourceTree = "<group>"; };
+		E4AB524A23F996AC001DADB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +81,15 @@
 			children = (
 				5E3CABCF23E8A76B00A2891E /* AppDelegate.swift */,
 				5E3CABD123E8A76B00A2891E /* SceneDelegate.swift */,
+				E4AB524A23F996AC001DADB1 /* LoginViewController.swift */,
+				E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */,
 				5E3CABD323E8A76B00A2891E /* ViewController.swift */,
 				5E3CABD523E8A76B00A2891E /* Main.storyboard */,
 				5E51ACB423EE47E300D3107C /* Font Book.app */,
 				5E3CABD823E8A76D00A2891E /* Assets.xcassets */,
 				5E3CABDA23E8A76D00A2891E /* LaunchScreen.storyboard */,
 				5E3CABDD23E8A76D00A2891E /* Info.plist */,
+				E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */,
 			);
 			path = "Connect+";
 			sourceTree = "<group>";
@@ -91,7 +100,6 @@
 				A8CC47BFE896BFE047D9B561 /* Pods-Connect+.debug.xcconfig */,
 				A0D083D06D0C379A13C8BBF6 /* Pods-Connect+.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -211,9 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AB524B23F996AC001DADB1 /* LoginViewController.swift in Sources */,
 				5E3CABD423E8A76B00A2891E /* ViewController.swift in Sources */,
 				5E3CABD023E8A76B00A2891E /* AppDelegate.swift in Sources */,
 				5E3CABD223E8A76B00A2891E /* SceneDelegate.swift in Sources */,
+				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
+				E4AB524D23F99AB6001DADB1 /* HomepageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
