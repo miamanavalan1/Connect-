@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         UITabBar.appearance().barTintColor = #colorLiteral(red: 0.8235294118, green: 0.8901960784, blue: 0.9254901961, alpha: 1)
-        UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().tintColor = #colorLiteral(red: 0.2509803922, green: 0.2509803922, blue: 0.2509803922, alpha: 1)
         
         return true
     }

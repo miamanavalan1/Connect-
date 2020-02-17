@@ -17,6 +17,8 @@
 		E4AB524B23F996AC001DADB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524A23F996AC001DADB1 /* LoginViewController.swift */; };
 		E4AB524D23F99AB6001DADB1 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */; };
 		E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */; };
+		E4AB525123FB462C001DADB1 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525023FB462C001DADB1 /* AddTaskViewController.swift */; };
+		E4AB525323FB4F64001DADB1 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525223FB4F64001DADB1 /* InitialViewController.swift */; };
 		FC420799EE8B7CDB52E6A358 /* Pods_Connect_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE470013E97EB982ED2521 /* Pods_Connect_.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		E4AB524A23F996AC001DADB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E4AB525023FB462C001DADB1 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		E4AB525223FB4F64001DADB1 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,15 +85,17 @@
 			children = (
 				5E3CABCF23E8A76B00A2891E /* AppDelegate.swift */,
 				5E3CABD123E8A76B00A2891E /* SceneDelegate.swift */,
+				E4AB525223FB4F64001DADB1 /* InitialViewController.swift */,
 				E4AB524A23F996AC001DADB1 /* LoginViewController.swift */,
 				E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */,
+				E4AB525023FB462C001DADB1 /* AddTaskViewController.swift */,
+				E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */,
 				5E3CABD323E8A76B00A2891E /* ViewController.swift */,
 				5E3CABD523E8A76B00A2891E /* Main.storyboard */,
 				5E51ACB423EE47E300D3107C /* Font Book.app */,
 				5E3CABD823E8A76D00A2891E /* Assets.xcassets */,
 				5E3CABDA23E8A76D00A2891E /* LaunchScreen.storyboard */,
 				5E3CABDD23E8A76D00A2891E /* Info.plist */,
-				E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */,
 			);
 			path = "Connect+";
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 				5E3CABD223E8A76B00A2891E /* SceneDelegate.swift in Sources */,
 				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
 				E4AB524D23F99AB6001DADB1 /* HomepageViewController.swift in Sources */,
+				E4AB525123FB462C001DADB1 /* AddTaskViewController.swift in Sources */,
+				E4AB525323FB4F64001DADB1 /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
