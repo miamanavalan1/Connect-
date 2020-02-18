@@ -19,6 +19,7 @@
 		E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */; };
 		E4AB525123FB462C001DADB1 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525023FB462C001DADB1 /* AddTaskViewController.swift */; };
 		E4AB525323FB4F64001DADB1 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525223FB4F64001DADB1 /* InitialViewController.swift */; };
+		E4AB525523FB6715001DADB1 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = E4AB525423FB6715001DADB1 /* Fonts */; };
 		FC420799EE8B7CDB52E6A358 /* Pods_Connect_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE470013E97EB982ED2521 /* Pods_Connect_.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E4AB525023FB462C001DADB1 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		E4AB525223FB4F64001DADB1 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		E4AB525423FB6715001DADB1 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		5E3CABCE23E8A76B00A2891E /* Connect+ */ = {
 			isa = PBXGroup;
 			children = (
+				E4AB525423FB6715001DADB1 /* Fonts */,
 				5E3CABCF23E8A76B00A2891E /* AppDelegate.swift */,
 				5E3CABD123E8A76B00A2891E /* SceneDelegate.swift */,
 				E4AB525223FB4F64001DADB1 /* InitialViewController.swift */,
@@ -169,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AB525523FB6715001DADB1 /* Fonts in Resources */,
 				5E3CABDC23E8A76D00A2891E /* LaunchScreen.storyboard in Resources */,
 				5E3CABD923E8A76D00A2891E /* Assets.xcassets in Resources */,
 				5E51ACB523EE47E300D3107C /* Font Book.app in Resources */,
