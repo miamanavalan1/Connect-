@@ -20,6 +20,12 @@
 		E4AB525123FB462C001DADB1 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525023FB462C001DADB1 /* AddTaskViewController.swift */; };
 		E4AB525323FB4F64001DADB1 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525223FB4F64001DADB1 /* InitialViewController.swift */; };
 		E4AB525523FB6715001DADB1 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = E4AB525423FB6715001DADB1 /* Fonts */; };
+		E4AB525F23FDD9C6001DADB1 /* Assistant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB525C23FDD9C5001DADB1 /* Assistant-Regular.ttf */; };
+		E4AB526023FDD9C6001DADB1 /* Assistant-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB525D23FDD9C5001DADB1 /* Assistant-SemiBold.ttf */; };
+		E4AB526123FDD9C6001DADB1 /* Assistant-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB525E23FDD9C5001DADB1 /* Assistant-Bold.ttf */; };
+		E4AB526523FDD9F1001DADB1 /* Marvel-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526223FDD9F0001DADB1 /* Marvel-Italic.ttf */; };
+		E4AB526623FDD9F1001DADB1 /* Marvel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526323FDD9F1001DADB1 /* Marvel-Regular.ttf */; };
+		E4AB526723FDD9F1001DADB1 /* Marvel-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526423FDD9F1001DADB1 /* Marvel-Bold.ttf */; };
 		FC420799EE8B7CDB52E6A358 /* Pods_Connect_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE470013E97EB982ED2521 /* Pods_Connect_.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +48,15 @@
 		E4AB525023FB462C001DADB1 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		E4AB525223FB4F64001DADB1 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		E4AB525423FB6715001DADB1 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		E4AB525623FDD995001DADB1 /* Marvel-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Bold.ttf"; sourceTree = "<group>"; };
+		E4AB525723FDD995001DADB1 /* Marvel-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Italic.ttf"; sourceTree = "<group>"; };
+		E4AB525823FDD996001DADB1 /* Marvel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Regular.ttf"; sourceTree = "<group>"; };
+		E4AB525C23FDD9C5001DADB1 /* Assistant-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Assistant-Regular.ttf"; path = "Connect+/Fonts/Assistant-Regular.ttf"; sourceTree = "<group>"; };
+		E4AB525D23FDD9C5001DADB1 /* Assistant-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Assistant-SemiBold.ttf"; path = "Connect+/Fonts/Assistant-SemiBold.ttf"; sourceTree = "<group>"; };
+		E4AB525E23FDD9C5001DADB1 /* Assistant-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Assistant-Bold.ttf"; path = "Connect+/Fonts/Assistant-Bold.ttf"; sourceTree = "<group>"; };
+		E4AB526223FDD9F0001DADB1 /* Marvel-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Marvel-Italic.ttf"; path = "Connect+/Fonts/Marvel-Italic.ttf"; sourceTree = "<group>"; };
+		E4AB526323FDD9F1001DADB1 /* Marvel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Marvel-Regular.ttf"; path = "Connect+/Fonts/Marvel-Regular.ttf"; sourceTree = "<group>"; };
+		E4AB526423FDD9F1001DADB1 /* Marvel-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Marvel-Bold.ttf"; path = "Connect+/Fonts/Marvel-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +82,15 @@
 		5E3CABC323E8A76B00A2891E = {
 			isa = PBXGroup;
 			children = (
+				E4AB526423FDD9F1001DADB1 /* Marvel-Bold.ttf */,
+				E4AB526223FDD9F0001DADB1 /* Marvel-Italic.ttf */,
+				E4AB526323FDD9F1001DADB1 /* Marvel-Regular.ttf */,
+				E4AB525E23FDD9C5001DADB1 /* Assistant-Bold.ttf */,
+				E4AB525C23FDD9C5001DADB1 /* Assistant-Regular.ttf */,
+				E4AB525D23FDD9C5001DADB1 /* Assistant-SemiBold.ttf */,
+				E4AB525623FDD995001DADB1 /* Marvel-Bold.ttf */,
+				E4AB525723FDD995001DADB1 /* Marvel-Italic.ttf */,
+				E4AB525823FDD996001DADB1 /* Marvel-Regular.ttf */,
 				5E3CABCE23E8A76B00A2891E /* Connect+ */,
 				5E3CABCD23E8A76B00A2891E /* Products */,
 				B05E66C378F2C4D4F1C649F5 /* Pods */,
@@ -172,6 +196,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AB526523FDD9F1001DADB1 /* Marvel-Italic.ttf in Resources */,
+				E4AB526623FDD9F1001DADB1 /* Marvel-Regular.ttf in Resources */,
+				E4AB526723FDD9F1001DADB1 /* Marvel-Bold.ttf in Resources */,
+				E4AB525F23FDD9C6001DADB1 /* Assistant-Regular.ttf in Resources */,
+				E4AB526023FDD9C6001DADB1 /* Assistant-SemiBold.ttf in Resources */,
+				E4AB526123FDD9C6001DADB1 /* Assistant-Bold.ttf in Resources */,
 				E4AB525523FB6715001DADB1 /* Fonts in Resources */,
 				5E3CABDC23E8A76D00A2891E /* LaunchScreen.storyboard in Resources */,
 				5E3CABD923E8A76D00A2891E /* Assets.xcassets in Resources */,
