@@ -1913,7 +1913,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="876"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8Wv-Gt-z70">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1526.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1637.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlaytext" translatesAutoresizingMaskIntoConstraints="NO" id="xQl-Ls-xsy">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="840"/>
@@ -1927,50 +1927,92 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grey_bgd" translatesAutoresizingMaskIntoConstraints="NO" id="QBG-tj-H9F">
+                                                <rect key="frame" x="0.0" y="888.5" width="414" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="eI4-LR-60k"/>
+                                                </constraints>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msg1" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-JJ-xcm">
-                                                <rect key="frame" x="0.0" y="888.5" width="414" height="78"/>
+                                                <rect key="frame" x="0.0" y="918.5" width="414" height="78"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="78" id="7dK-WF-uM3"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                          2/1, 2020, 8:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilx-MN-Rva">
+                                                <rect key="frame" x="0.0" y="996.5" width="414" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msg2" translatesAutoresizingMaskIntoConstraints="NO" id="YzX-mg-J7y">
-                                                <rect key="frame" x="0.0" y="966.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1010" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="CaA-6X-SKF"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                          1/30, 2020, 7:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25g-JW-K53">
+                                                <rect key="frame" x="0.0" y="1090" width="414" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msg3" translatesAutoresizingMaskIntoConstraints="NO" id="3s2-O3-OqV">
-                                                <rect key="frame" x="0.0" y="1046.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1103.5" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="yf0-y7-6HU"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                          1/29, 2020, 10:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4Q-dS-M2O">
+                                                <rect key="frame" x="0.0" y="1183.5" width="414" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msg4" translatesAutoresizingMaskIntoConstraints="NO" id="NSe-5Y-dV7">
-                                                <rect key="frame" x="0.0" y="1126.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1197" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="206-j1-SyC"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                          1/27, 2020, 8:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-wY-SiP">
+                                                <rect key="frame" x="0.0" y="1277" width="414" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msg5" translatesAutoresizingMaskIntoConstraints="NO" id="v24-hY-cz5">
-                                                <rect key="frame" x="0.0" y="1206.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1290.5" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="uni-Mg-fbr"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                          1/26, 2020, 1:30PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fK-ws-NHf">
+                                                <rect key="frame" x="0.0" y="1370.5" width="414" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msg6" translatesAutoresizingMaskIntoConstraints="NO" id="Gxi-hw-cUL">
-                                                <rect key="frame" x="0.0" y="1286.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1384" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="Hbc-O2-bHG"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                          1/25, 2020, 3:50PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgu-wH-5re">
+                                                <rect key="frame" x="0.0" y="1464" width="414" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grey_bgd" translatesAutoresizingMaskIntoConstraints="NO" id="87w-Jp-wgB">
-                                                <rect key="frame" x="0.0" y="1366.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1477.5" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="e1K-Lx-xI8"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grey_bgd" translatesAutoresizingMaskIntoConstraints="NO" id="45d-tv-kPs">
-                                                <rect key="frame" x="0.0" y="1446.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="1557.5" width="414" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="RQz-pl-od3"/>
                                                 </constraints>
