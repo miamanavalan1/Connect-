@@ -2092,7 +2092,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-re-PiI">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-re-PiI">
                                                 <rect key="frame" x="0.0" y="130" width="322" height="70"/>
                                                 <color key="backgroundColor" red="0.90980392160000001" green="0.71764705880000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -2100,14 +2100,14 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Assistant-Bold" family="Assistant" pointSize="20"/>
                                                 <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="    Heartburn"/>
+                                                <state key="normal" title="    Heartburn" image="arrow.right" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="lay.cornerRadius">
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvW-uW-q69">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvW-uW-q69">
                                                 <rect key="frame" x="0.0" y="220" width="322" height="70"/>
                                                 <color key="backgroundColor" red="0.90980392160000001" green="0.71764705880000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -2115,7 +2115,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Assistant-Bold" family="Assistant" pointSize="20"/>
                                                 <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="   Backache"/>
+                                                <state key="normal" title="   Backache" image="arrow.right" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="lay.cornerRadius">
                                                         <integer key="value" value="5"/>
@@ -2137,7 +2137,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc1-zw-Gg5">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc1-zw-Gg5">
                                                 <rect key="frame" x="0.0" y="430" width="322" height="70"/>
                                                 <color key="backgroundColor" red="0.90980392160000001" green="0.71764705880000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -2145,7 +2145,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Assistant-Bold" family="Assistant" pointSize="20"/>
                                                 <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="   Baby Kicking"/>
+                                                <state key="normal" title="   Baby Kicking" image="arrow.right" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="lay.cornerRadius">
                                                         <integer key="value" value="5"/>
