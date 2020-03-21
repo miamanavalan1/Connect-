@@ -121,12 +121,12 @@ class ScrollHomeViewController: UIViewController {
         scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
         
         let homeview: UIView!
-        homeview = UIView(frame: CGRect(x: 0, y: 100, width: 414, height: 800))
+        homeview = UIView(frame: CGRect(x: 0, y: 100, width: 414, height: 700))
         homeview.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
-        homeview.heightAnchor.constraint(equalToConstant: 800).isActive = true
+        homeview.heightAnchor.constraint(equalToConstant: 700).isActive = true
         
         let image = UIImage(named: "overlay of squares.png")
         var imageView: UIImageView!
@@ -164,7 +164,7 @@ class ScrollHomeViewController: UIViewController {
         homeview.addSubview(logoutbtn)
         
         let newsfeed: UILabel!
-        newsfeed = UILabel(frame: CGRect(x: 20, y: 700, width: 270, height: 48.5))
+        newsfeed = UILabel(frame: CGRect(x: 20, y: 600, width: 270, height: 48.5))
         newsfeed.text = "Newsfeed \u{2228}"
         newsfeed.textAlignment = .left
         newsfeed.textColor = UIColor.darkGray
