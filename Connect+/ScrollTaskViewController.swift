@@ -162,6 +162,19 @@ class ScrollTaskViewController: UIViewController {
         let sbtn6 = SquareButton(titleString: "Dishes")
         
         
+        //AddShoppingTaskViewController
+        sbtn1.addTarget(self, action: #selector(AddShoppingBtnClicked(_:)), for: .touchUpInside)
+        sbtn2.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
+        sbtn3.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
+        sbtn4.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
+        //AddCookingTaskViewController
+        sbtn5.addTarget(self, action: #selector(AddCookingBtnClicked(_:)), for: .touchUpInside)
+        sbtn6.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
+        
+        
+        
+        
+        
         row1.addArrangedSubview(sbtn1)
         row1.addArrangedSubview(sbtn2)
         row2.addArrangedSubview(sbtn3)
@@ -179,8 +192,7 @@ class ScrollTaskViewController: UIViewController {
         row3.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
         
-        row1.topAnchor.constraint(equalTo: subtitle3.bottomAnchor).isActive = true
-        
+        //row1.topAnchor.constraint(equalTo: subtitle3.bottomAnchor).isActive = true
         
         
         
@@ -195,6 +207,23 @@ class ScrollTaskViewController: UIViewController {
         
         
         
+    }
+    
+    @objc func NormalBtnClicked(_ sender: UIButton) {
+        let buttonTitle = sender.title(for: .normal)
+        let next = storyboard?.instantiateViewController(identifier: "AddNormalTastViewController") as? AddNormalTastViewController
+        next?.taskName = buttonTitle!
+        self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func AddShoppingBtnClicked(_ sender: UIButton) {
+        let next = storyboard?.instantiateViewController(identifier: "AddShoppingTaskViewController") as? AddShoppingTaskViewController
+        self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func AddCookingBtnClicked(_ sender:UIButton) {
+        let next = storyboard?.instantiateViewController(identifier: "AddCookingTaskViewController") as? AddCookingTaskViewController
+        self.navigationController?.pushViewController(next!, animated: true)
     }
     
 
