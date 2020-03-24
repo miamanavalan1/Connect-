@@ -255,10 +255,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 print("error: \(error)")
                 
                 let event:EKEvent = EKEvent(eventStore: eventStore)
-                event.title = "Go buy a pillow"
+                DispatchQueue.main.async {
+                    event.title = "\(self.EventTitle.text!)"
+                    event.notes = "\(self.EventNotes.text!)"
+                }
                 event.startDate = Date()
                 event.endDate = Date()
-                event.notes = "Check pillow brands and quality"
                 event.calendar = eventStore.defaultCalendarForNewEvents
                 do {
                     try eventStore.save(event, span: .thisEvent)
