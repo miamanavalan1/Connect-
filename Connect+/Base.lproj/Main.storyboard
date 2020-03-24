@@ -2439,7 +2439,7 @@
                                 <color key="barTintColor" red="0.84835535289999997" green="0.90130490060000001" blue="0.93333989380000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tabBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" baselineRelativeArrangement="YES" id="CYw-Uv-8Tv">
-                                <rect key="frame" x="57" y="133" width="301" height="500"/>
+                                <rect key="frame" x="57" y="133" width="301" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lno-ZM-FA9">
@@ -2468,10 +2468,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="d2O-Ho-QC1">
-                                        <rect key="frame" x="0.0" y="46.5" width="301" height="37"/>
+                                        <rect key="frame" x="0.0" y="27" width="301" height="37"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOa-em-5pb">
-                                                <rect key="frame" x="8" y="8" width="25.5" height="21"/>
+                                                <rect key="frame" x="8" y="18.5" width="25.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2516,7 +2516,7 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m9f-Rs-msT">
-                                        <rect key="frame" x="0.0" y="120.5" width="301" height="267"/>
+                                        <rect key="frame" x="0.0" y="90.5" width="301" height="297"/>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="YK8-sJ-XRb">
                                             <size key="itemSize" width="37" height="37"/>
@@ -2570,6 +2570,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oB5-jT-5LJ">
+                                        <rect key="frame" x="0.0" y="516" width="301" height="34"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Fo-I2-7KA">
+                                        <rect key="frame" x="0.0" y="566" width="301" height="34"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lac-Fv-Qdr">
@@ -2591,6 +2603,8 @@
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="ikk-LL-qVP"/>
                     <connections>
                         <outlet property="Calendar" destination="m9f-Rs-msT" id="7U8-Ce-tQN"/>
+                        <outlet property="DateField" destination="oB5-jT-5LJ" id="fgS-TJ-xox"/>
+                        <outlet property="EndDateField" destination="2Fo-I2-7KA" id="cAv-yG-y99"/>
                         <outlet property="EventNotes" destination="lit-U9-WC4" id="ui1-sl-LLF"/>
                         <outlet property="EventTitle" destination="VYk-hu-sao" id="RBH-ZP-C8Z"/>
                         <outlet property="MonthLabel" destination="qvZ-H3-bLG" id="RF9-eO-tBH"/>

@@ -55,7 +55,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         GetStartDateDayPosition()
         configureTextFields()
         configureTapGesture()
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(ViewController.dateChanged(datePicker:)), for: .valueChanged)
+        DateField.inputView = datePicker
+        
+        datePicker2 = UIDatePicker()
+        datePicker2?.datePickerMode = .dateAndTime
+        datePicker2?.addTarget(self, action: #selector(ViewController.dateChanged2(datePicker:)), for: .valueChanged)
+        EndDateField.inputView = datePicker2
     }
+    
+    @objc func dateChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        DateField.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    @objc func dateChanged2(datePicker: UIDatePicker){
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "MMM d, h:mm a"
+           EndDateField.text = dateFormatter.string(from: datePicker.date)
+       }
         
     func GetStartDateDayPosition() {
         switch Direction{
@@ -226,6 +248,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var EventNotes: UITextField!
     
+    @IBOutlet weak var DateField: UITextField!
+    
+    @IBOutlet weak var EndDateField: UITextField!
+    
+    private var datePicker: UIDatePicker?
+    
+    private var datePicker2: UIDatePicker?
+    
+    
     private func configureTapGesture(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap))
         view.addGestureRecognizer(tapGesture)
@@ -258,9 +289,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 DispatchQueue.main.async {
                     event.title = "\(self.EventTitle.text!)"
                     event.notes = "\(self.EventNotes.text!)"
+                    event.startDate = self.datePicker?.date
+                    event.endDate = self.datePicker2?.date
                 }
-                event.startDate = Date()
-                event.endDate = Date()
+                
                 event.calendar = eventStore.defaultCalendarForNewEvents
                 do {
                     try eventStore.save(event, span: .thisEvent)
