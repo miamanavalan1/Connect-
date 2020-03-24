@@ -2558,13 +2558,13 @@
                                             <outlet property="delegate" destination="d3O-q8-ePd" id="8G4-eT-glp"/>
                                         </connections>
                                     </collectionView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Title" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-hu-sao">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-hu-sao">
                                         <rect key="frame" x="0.0" y="416" width="301" height="34"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lit-U9-WC4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lit-U9-WC4">
                                         <rect key="frame" x="0.0" y="466" width="301" height="34"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2591,6 +2591,8 @@
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="ikk-LL-qVP"/>
                     <connections>
                         <outlet property="Calendar" destination="m9f-Rs-msT" id="7U8-Ce-tQN"/>
+                        <outlet property="EventNotes" destination="lit-U9-WC4" id="ui1-sl-LLF"/>
+                        <outlet property="EventTitle" destination="VYk-hu-sao" id="RBH-ZP-C8Z"/>
                         <outlet property="MonthLabel" destination="qvZ-H3-bLG" id="RF9-eO-tBH"/>
                     </connections>
                 </viewController>

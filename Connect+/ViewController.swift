@@ -9,11 +9,15 @@
 
 //  btnAddEvent code reference: https://www.youtube.com/watch?v=sSFzcvvs4Oc&t=545s
 
+//  TextField code reference: https://www.youtube.com/watch?v=jY9t5rX8wHE
+
 import UIKit
 import EventKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
+    
+    
     @IBOutlet weak var MonthLabel: UILabel!
     
     @IBOutlet weak var Calendar: UICollectionView!
@@ -49,7 +53,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             weekday = 7
         }
         GetStartDateDayPosition()
-        
+        configureTextFields()
+        configureTapGesture()
     }
         
     func GetStartDateDayPosition() {
@@ -216,34 +221,63 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
 
-    @IBAction func btnAddEvent(_ sender: Any) {
     
-    let eventStore: EKEventStore = EKEventStore()
+    @IBOutlet weak var EventTitle: UITextField!
+    
+    @IBOutlet weak var EventNotes: UITextField!
+    
+    private func configureTapGesture(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(){
+        print("Handle tap was called!")
+        view.endEditing(true)
+    }
+    
+    private func configureTextFields(){
+        EventTitle.delegate = self
+        EventNotes.delegate = self
+    }
+    
+    @IBAction func btnAddEvent(_ sender: Any) {
         
-    eventStore.requestAccess(to: .event) { (granted, error) in
+        view.endEditing(true)
+    
+        let eventStore: EKEventStore = EKEventStore()
         
-        if (granted) && (error == nil)
-        {
-            print("granted: \(granted)")
-            print("error: \(error)")
+        eventStore.requestAccess(to: .event) { (granted, error) in
             
-            let event:EKEvent = EKEvent(eventStore: eventStore)
-            event.title = "Go buy a pillow"
-            event.startDate = Date()
-            event.endDate = Date()
-            event.notes = "Check pillow brands and quality"
-            event.calendar = eventStore.defaultCalendarForNewEvents
-            do {
-                try eventStore.save(event, span: .thisEvent)
-            }catch let error as NSError{
+            if (granted) && (error == nil)
+            {
+                print("granted: \(granted)")
+                print("error: \(error)")
+                
+                let event:EKEvent = EKEvent(eventStore: eventStore)
+                event.title = "Go buy a pillow"
+                event.startDate = Date()
+                event.endDate = Date()
+                event.notes = "Check pillow brands and quality"
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                }catch let error as NSError{
+                    print("error: \(error)")
+                }
+                print("Save Event!")
+            }
+            else{
                 print("error: \(error)")
             }
-            print("Save Event!")
         }
-        else{
-            print("error: \(error)")
-        }
-        }
+    }
+}
+
+extension ViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
