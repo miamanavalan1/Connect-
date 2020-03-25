@@ -1,4 +1,11 @@
-
+//
+//  DateCollectionViewCell.swift
+//  Connect+
+//
+//  Created by lujiaan on 3/25/20.
+//  Copyright © 2020 Mia Manavalan. All rights reserved.
+//
+//  code reference: https://github.com/StergRi/Calendar
 
 import UIKit
 
@@ -21,12 +28,12 @@ class DateCollectionViewCell: UICollectionViewCell {
         CircleLayer.lineWidth = 2
         CircleLayer.strokeEnd = 0
         CircleLayer.fillColor = UIColor.clear.cgColor
-        CircleLayer.lineCap = kCALineCapRound
+        CircleLayer.lineCap = CAShapeLayerLineCap.round
         
         let Animation = CABasicAnimation(keyPath: "strokeEnd")
         Animation.duration = 1.5
         Animation.toValue = 1
-        Animation.fillMode = kCAFillModeForwards
+        Animation.fillMode = CAMediaTimingFillMode.forwards
         Animation.isRemovedOnCompletion = false
         
         CircleLayer.add(Animation, forKey: nil)

@@ -33,9 +33,9 @@
 		E4AB526D23FDF77D001DADB1 /* AddNormalTastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB526C23FDF77D001DADB1 /* AddNormalTastViewController.swift */; };
 		E4AB526F23FE05E4001DADB1 /* HealthDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */; };
 		E4AB527123FE0799001DADB1 /* AddHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527023FE0799001DADB1 /* AddHealthViewController.swift */; };
+		EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA175763242BEC3B00B8A8D6 /* DateCollectionViewCell.swift */; };
+		EA175766242BEC7200B8A8D6 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA175765242BEC7200B8A8D6 /* CalendarVars.swift */; };
 		EA8FBC0524270A2A00E25F45 /* Pods_Connect_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE470013E97EB982ED2521 /* Pods_Connect_.framework */; };
-		EAA3E1FD242953D800EB047D /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3E1FC242953D700EB047D /* CalendarVars.swift */; };
-		EAA3E1FF242953DE00EB047D /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3E1FE242953DE00EB047D /* DateCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +73,8 @@
 		E4AB526C23FDF77D001DADB1 /* AddNormalTastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNormalTastViewController.swift; sourceTree = "<group>"; };
 		E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDetailViewController.swift; sourceTree = "<group>"; };
 		E4AB527023FE0799001DADB1 /* AddHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHealthViewController.swift; sourceTree = "<group>"; };
-		EAA3E1FC242953D700EB047D /* CalendarVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarVars.swift; path = "../../Calendar-master/CalendarVars.swift"; sourceTree = "<group>"; };
-		EAA3E1FE242953DE00EB047D /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = "../../Calendar-master/DateCollectionViewCell.swift"; sourceTree = "<group>"; };
+		EA175763242BEC3B00B8A8D6 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA175765242BEC7200B8A8D6 /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,9 @@
 			children = (
 				E4AB525423FB6715001DADB1 /* Fonts */,
 				5E3CABCF23E8A76B00A2891E /* AppDelegate.swift */,
+				EA175763242BEC3B00B8A8D6 /* DateCollectionViewCell.swift */,
 				5E3CABD123E8A76B00A2891E /* SceneDelegate.swift */,
+				EA175765242BEC7200B8A8D6 /* CalendarVars.swift */,
 				E4AB525223FB4F64001DADB1 /* InitialViewController.swift */,
 				E4AB524A23F996AC001DADB1 /* LoginViewController.swift */,
 				E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */,
@@ -141,8 +143,6 @@
 				E4AB527023FE0799001DADB1 /* AddHealthViewController.swift */,
 				E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */,
 				5E3CABD323E8A76B00A2891E /* ViewController.swift */,
-				EAA3E1FE242953DE00EB047D /* DateCollectionViewCell.swift */,
-				EAA3E1FC242953D700EB047D /* CalendarVars.swift */,
 				5E3CABD523E8A76B00A2891E /* Main.storyboard */,
 				5E3CABD823E8A76D00A2891E /* Assets.xcassets */,
 				5E3CABDA23E8A76D00A2891E /* LaunchScreen.storyboard */,
@@ -290,18 +290,18 @@
 				E4AB526D23FDF77D001DADB1 /* AddNormalTastViewController.swift in Sources */,
 				E4AB526923FDDF58001DADB1 /* AddCookingTaskViewController.swift in Sources */,
 				5E3CABD423E8A76B00A2891E /* ViewController.swift in Sources */,
+				EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */,
 				5E3CABD023E8A76B00A2891E /* AppDelegate.swift in Sources */,
 				5E3CABD223E8A76B00A2891E /* SceneDelegate.swift in Sources */,
 				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
 				E42778072423FAAB00BD2408 /* ScrollTaskViewController.swift in Sources */,
 				E427780524217CA700BD2408 /* ScrollHomeViewController.swift in Sources */,
 				E4AB524D23F99AB6001DADB1 /* HomepageViewController.swift in Sources */,
-				EAA3E1FD242953D800EB047D /* CalendarVars.swift in Sources */,
 				E4AB526B23FDF11F001DADB1 /* TaskViewController.swift in Sources */,
 				E4AB525123FB462C001DADB1 /* AddShoppingTaskViewController.swift in Sources */,
 				E4AB526F23FE05E4001DADB1 /* HealthDetailViewController.swift in Sources */,
+				EA175766242BEC7200B8A8D6 /* CalendarVars.swift in Sources */,
 				E42778092429001E00BD2408 /* ScrollHealthViewController.swift in Sources */,
-				EAA3E1FF242953DE00EB047D /* DateCollectionViewCell.swift in Sources */,
 				E4AB525323FB4F64001DADB1 /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

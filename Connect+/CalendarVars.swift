@@ -1,3 +1,11 @@
+//
+//  CalendarVars.swift
+//  Connect+
+//
+//  Created by lujiaan on 3/25/20.
+//  Copyright © 2020 Mia Manavalan. All rights reserved.
+//
+//  code reference: https://github.com/StergRi/Calendar
 
 import Foundation
 
