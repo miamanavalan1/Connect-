@@ -2816,11 +2816,11 @@
             </objects>
             <point key="canvasLocation" x="718.84057971014499" y="1538.8392857142856"/>
         </scene>
-        <!--Item-->
+        <!--Task-->
         <scene sceneID="IXB-WZ-Lzo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e3v-pu-xjP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dCv-Bk-Qfd"/>
+                    <tabBarItem key="tabBarItem" title="Task" image="pencil.tip" catalog="system" id="dCv-Bk-Qfd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SSF-ee-6HL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -2836,11 +2836,11 @@
             </objects>
             <point key="canvasLocation" x="1629" y="139"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="4kf-JP-9Bq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JAo-RH-q4j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HAH-gj-pVD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="HAH-gj-pVD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HCV-Up-dba">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -2856,11 +2856,11 @@
             </objects>
             <point key="canvasLocation" x="-1555.072463768116" y="2375.8928571428569"/>
         </scene>
-        <!--Item-->
+        <!--Health-->
         <scene sceneID="ogk-C8-WMD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ynH-cV-uTN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="tNI-tA-jn9"/>
+                    <tabBarItem key="tabBarItem" title="Health" image="heart" catalog="system" id="tNI-tA-jn9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ww7-Py-Bu5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -2922,6 +2922,7 @@
         <image name="message" catalog="system" width="64" height="56"/>
         <image name="orange rectangle" width="107" height="152"/>
         <image name="overlay of squares" width="375" height="354"/>
+        <image name="pencil.tip" catalog="system" width="48" height="64"/>
         <image name="second" width="157" height="23"/>
         <image name="send" width="21" height="21"/>
         <image name="third" width="157" height="23"/>
