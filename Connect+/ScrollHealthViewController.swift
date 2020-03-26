@@ -189,7 +189,7 @@ class ScrollHealthViewController: UIViewController {
     
     @objc func AddHealthBtnClicked(_ sender: UIButton) {
         let buttonTitle = sender.title(for: .normal)
-        let next = storyboard?.instantiateViewController(identifier: "HealthDetailViewController") as? HealthDetailViewController
+        let next = storyboard?.instantiateViewController(identifier: "AddHealthViewController") as? AddHealthViewController
         next?.name = buttonTitle!
         self.navigationController?.pushViewController(next!, animated: true)
     }
