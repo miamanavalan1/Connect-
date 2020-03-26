@@ -17,7 +17,6 @@
 		E42778072423FAAB00BD2408 /* ScrollTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42778062423FAAB00BD2408 /* ScrollTaskViewController.swift */; };
 		E42778092429001E00BD2408 /* ScrollHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42778082429001E00BD2408 /* ScrollHealthViewController.swift */; };
 		E4AB524B23F996AC001DADB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524A23F996AC001DADB1 /* LoginViewController.swift */; };
-		E4AB524D23F99AB6001DADB1 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */; };
 		E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */; };
 		E4AB525123FB462C001DADB1 /* AddShoppingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */; };
 		E4AB525323FB4F64001DADB1 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525223FB4F64001DADB1 /* InitialViewController.swift */; };
@@ -54,7 +53,6 @@
 		E42778062423FAAB00BD2408 /* ScrollTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTaskViewController.swift; sourceTree = "<group>"; };
 		E42778082429001E00BD2408 /* ScrollHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollHealthViewController.swift; sourceTree = "<group>"; };
 		E4AB524A23F996AC001DADB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShoppingTaskViewController.swift; sourceTree = "<group>"; };
 		E4AB525223FB4F64001DADB1 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				E4AB525223FB4F64001DADB1 /* InitialViewController.swift */,
 				E4AB524A23F996AC001DADB1 /* LoginViewController.swift */,
 				E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */,
-				E4AB524C23F99AB6001DADB1 /* HomepageViewController.swift */,
 				E4AB526A23FDF11F001DADB1 /* TaskViewController.swift */,
 				E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */,
 				E4AB526823FDDF58001DADB1 /* AddCookingTaskViewController.swift */,
@@ -296,7 +293,6 @@
 				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
 				E42778072423FAAB00BD2408 /* ScrollTaskViewController.swift in Sources */,
 				E427780524217CA700BD2408 /* ScrollHomeViewController.swift in Sources */,
-				E4AB524D23F99AB6001DADB1 /* HomepageViewController.swift in Sources */,
 				E4AB526B23FDF11F001DADB1 /* TaskViewController.swift in Sources */,
 				E4AB525123FB462C001DADB1 /* AddShoppingTaskViewController.swift in Sources */,
 				E4AB526F23FE05E4001DADB1 /* HealthDetailViewController.swift in Sources */,
