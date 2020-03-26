@@ -28,7 +28,6 @@
 		E4AB526623FDD9F1001DADB1 /* Marvel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526323FDD9F1001DADB1 /* Marvel-Regular.ttf */; };
 		E4AB526723FDD9F1001DADB1 /* Marvel-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526423FDD9F1001DADB1 /* Marvel-Bold.ttf */; };
 		E4AB526923FDDF58001DADB1 /* AddCookingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB526823FDDF58001DADB1 /* AddCookingTaskViewController.swift */; };
-		E4AB526B23FDF11F001DADB1 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB526A23FDF11F001DADB1 /* TaskViewController.swift */; };
 		E4AB526D23FDF77D001DADB1 /* AddNormalTastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB526C23FDF77D001DADB1 /* AddNormalTastViewController.swift */; };
 		E4AB526F23FE05E4001DADB1 /* HealthDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */; };
 		E4AB527123FE0799001DADB1 /* AddHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527023FE0799001DADB1 /* AddHealthViewController.swift */; };
@@ -67,7 +66,6 @@
 		E4AB526323FDD9F1001DADB1 /* Marvel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Marvel-Regular.ttf"; path = "Connect+/Fonts/Marvel-Regular.ttf"; sourceTree = "<group>"; };
 		E4AB526423FDD9F1001DADB1 /* Marvel-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Marvel-Bold.ttf"; path = "Connect+/Fonts/Marvel-Bold.ttf"; sourceTree = "<group>"; };
 		E4AB526823FDDF58001DADB1 /* AddCookingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCookingTaskViewController.swift; sourceTree = "<group>"; };
-		E4AB526A23FDF11F001DADB1 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		E4AB526C23FDF77D001DADB1 /* AddNormalTastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNormalTastViewController.swift; sourceTree = "<group>"; };
 		E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDetailViewController.swift; sourceTree = "<group>"; };
 		E4AB527023FE0799001DADB1 /* AddHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHealthViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				E4AB525223FB4F64001DADB1 /* InitialViewController.swift */,
 				E4AB524A23F996AC001DADB1 /* LoginViewController.swift */,
 				E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */,
-				E4AB526A23FDF11F001DADB1 /* TaskViewController.swift */,
 				E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */,
 				E4AB526823FDDF58001DADB1 /* AddCookingTaskViewController.swift */,
 				E4AB526C23FDF77D001DADB1 /* AddNormalTastViewController.swift */,
@@ -293,7 +290,6 @@
 				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
 				E42778072423FAAB00BD2408 /* ScrollTaskViewController.swift in Sources */,
 				E427780524217CA700BD2408 /* ScrollHomeViewController.swift in Sources */,
-				E4AB526B23FDF11F001DADB1 /* TaskViewController.swift in Sources */,
 				E4AB525123FB462C001DADB1 /* AddShoppingTaskViewController.swift in Sources */,
 				E4AB526F23FE05E4001DADB1 /* HealthDetailViewController.swift in Sources */,
 				EA175766242BEC7200B8A8D6 /* CalendarVars.swift in Sources */,
