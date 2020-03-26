@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 class NewsItem : UIView {
     var currentuser: Bool?
@@ -160,6 +162,7 @@ class ScrollHomeViewController: UIViewController {
         logoutbtn.setTitle("Log out", for: .normal)
         logoutbtn.setTitleColor(UIColor.link, for: .normal)
         logoutbtn.titleLabel?.font = UIFont(name: "System", size: 15.0)
+        logoutbtn.addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
         
         homeview.addSubview(logoutbtn)
         
@@ -206,6 +209,18 @@ class ScrollHomeViewController: UIViewController {
         
         
         
+    }
+    
+    @objc func LogoutBtnClicked(_ sender: UIButton) {
+        if let accessToken = AccessToken.current{
+            AccessToken.current = nil
+            let myLogin = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            let loginDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+            loginDelegate.window?.rootViewController = myLogin
+            //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+            //self.present(myLogin!, animated: true, completion: nil)
+            
+        }
     }
     
 
