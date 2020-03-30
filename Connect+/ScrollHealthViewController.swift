@@ -100,6 +100,11 @@ class ScrollHealthViewController: UIViewController {
         let log2 = ArrowButton(titleString: "Backache")
         let log3 = ArrowButton(titleString: "Baby Kicking")
         
+        log1.addTarget(self, action: #selector(GoToHealthDetail(_:)), for: .touchUpInside)
+        log2.addTarget(self, action: #selector(GoToHealthDetail(_:)), for: .touchUpInside)
+        log3.addTarget(self, action: #selector(GoToHealthDetail(_:)), for: .touchUpInside)
+        
+        
         stackView.addArrangedSubview(date1)
         stackView.addArrangedSubview(log1)
         stackView.addArrangedSubview(log2)
@@ -191,6 +196,13 @@ class ScrollHealthViewController: UIViewController {
         let buttonTitle = sender.title(for: .normal)
         let next = storyboard?.instantiateViewController(identifier: "AddHealthViewController") as? AddHealthViewController
         next?.name = buttonTitle!
+        self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func GoToHealthDetail(_ sender: UIButton) {
+        let healthname = sender.title(for: .normal)
+        let next = storyboard?.instantiateViewController(identifier: "HealthDetailViewController") as? HealthDetailViewController
+        next?.healthname = healthname!
         self.navigationController?.pushViewController(next!, animated: true)
     }
     /*

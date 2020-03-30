@@ -9,8 +9,33 @@
 import UIKit
 
 class HealthDetailViewController: UIViewController {
-
-   
+    var healthname = ""
+    var healthdetail = ""
+    var addedtime = ""
+    var showhealthdetail: UILabel!
+    @IBOutlet weak var showhealthname: UILabel!
+    @IBOutlet weak var showaddedtime: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        showhealthname.text = healthname
+        
+        addedtime = "Mar 30, 2020"
+        showaddedtime.text = "Added at " + addedtime
+        
+        healthdetail = "health details"
+        
+        showhealthdetail = UILabel(frame: CGRect(x: 37, y: 322, width: 342, height: 293))
+        showhealthdetail.text = healthdetail
+        showhealthdetail.textColor = UIColor.black
+        showhealthdetail.font = UIFont(name: "Assistant-Regular", size: 20.0)
+        showhealthdetail.sizeToFit()
+        
+        self.view.addSubview(showhealthdetail)
+        
+        // Do any additional setup after loading the view.
+    }
     /*
     // MARK: - Navigation
 
