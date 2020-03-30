@@ -9,11 +9,33 @@
 import UIKit
 
 class ToDoDetailViewController: UIViewController {
-
+    
+    var taskname = ""
+    var taskdetail = ""
+    var showtaskname: UILabel!
+    var showtaskdetail: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        taskdetail = "detail"
+        
+        showtaskname = UILabel(frame: CGRect(x: 7, y: 137, width: 400, height: 37))
+        showtaskname.text = taskname
+        showtaskname.textAlignment = .center
+        showtaskname.textColor = UIColor.black
+        showtaskname.font = UIFont(name: "Marvel-Bold", size: 30.0)
+        
+        showtaskdetail = UILabel(frame: CGRect(x: 37, y: 398, width: 342, height: 293))
+        showtaskdetail.text = taskdetail
+        showtaskdetail.textColor = UIColor.black
+        showtaskdetail.font = UIFont(name: "Assistant-Regular", size: 20.0)
+        
+        self.view.addSubview(showtaskname)
+        self.view.addSubview(showtaskdetail)
+        
     }
     
 

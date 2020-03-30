@@ -9,11 +9,21 @@
 import UIKit
 
 class CompletedDetailViewController: UIViewController {
-
+    var taskname = ""
+    var finishtime = ""
+    
+    @IBOutlet weak var showtaskname: UITextField!
+    @IBOutlet weak var showfinishtime: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        finishtime = "Feb 3, 2020"
+        showtaskname.text = taskname
+        
+        showfinishtime.text = "Completed on " + finishtime
+        
     }
     
 
