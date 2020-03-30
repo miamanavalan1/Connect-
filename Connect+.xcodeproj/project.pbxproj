@@ -17,6 +17,9 @@
 		E42778072423FAAB00BD2408 /* ScrollTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42778062423FAAB00BD2408 /* ScrollTaskViewController.swift */; };
 		E42778092429001E00BD2408 /* ScrollHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42778082429001E00BD2408 /* ScrollHealthViewController.swift */; };
 		E4277811242D4BE700BD2408 /* AddHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4277810242D4BE700BD2408 /* AddHealthViewController.swift */; };
+		E427781324326CCE00BD2408 /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E427781224326CCE00BD2408 /* ToDoDetailViewController.swift */; };
+		E427781524326CEC00BD2408 /* CompletedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E427781424326CEC00BD2408 /* CompletedDetailViewController.swift */; };
+		E427781724326D1500BD2408 /* ShoppingToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E427781624326D1500BD2408 /* ShoppingToDoDetailViewController.swift */; };
 		E4AB524B23F996AC001DADB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524A23F996AC001DADB1 /* LoginViewController.swift */; };
 		E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */; };
 		E4AB525123FB462C001DADB1 /* AddShoppingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */; };
@@ -52,6 +55,9 @@
 		E42778062423FAAB00BD2408 /* ScrollTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTaskViewController.swift; sourceTree = "<group>"; };
 		E42778082429001E00BD2408 /* ScrollHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollHealthViewController.swift; sourceTree = "<group>"; };
 		E4277810242D4BE700BD2408 /* AddHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHealthViewController.swift; sourceTree = "<group>"; };
+		E427781224326CCE00BD2408 /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
+		E427781424326CEC00BD2408 /* CompletedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedDetailViewController.swift; sourceTree = "<group>"; };
+		E427781624326D1500BD2408 /* ShoppingToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingToDoDetailViewController.swift; sourceTree = "<group>"; };
 		E4AB524A23F996AC001DADB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShoppingTaskViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +140,10 @@
 				E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */,
 				E4AB526823FDDF58001DADB1 /* AddCookingTaskViewController.swift */,
 				E4AB526C23FDF77D001DADB1 /* AddNormalTastViewController.swift */,
+				E4277810242D4BE700BD2408 /* AddHealthViewController.swift */,
+				E427781224326CCE00BD2408 /* ToDoDetailViewController.swift */,
+				E427781624326D1500BD2408 /* ShoppingToDoDetailViewController.swift */,
+				E427781424326CEC00BD2408 /* CompletedDetailViewController.swift */,
 				E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */,
 				5E3CABD323E8A76B00A2891E /* ViewController.swift */,
 				5E3CABD523E8A76B00A2891E /* Main.storyboard */,
@@ -143,7 +153,6 @@
 				E427780424217CA700BD2408 /* ScrollHomeViewController.swift */,
 				E42778062423FAAB00BD2408 /* ScrollTaskViewController.swift */,
 				E42778082429001E00BD2408 /* ScrollHealthViewController.swift */,
-				E4277810242D4BE700BD2408 /* AddHealthViewController.swift */,
 			);
 			path = "Connect+";
 			sourceTree = "<group>";
@@ -285,6 +294,7 @@
 				5E3CABD423E8A76B00A2891E /* ViewController.swift in Sources */,
 				EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */,
 				5E3CABD023E8A76B00A2891E /* AppDelegate.swift in Sources */,
+				E427781724326D1500BD2408 /* ShoppingToDoDetailViewController.swift in Sources */,
 				E4277811242D4BE700BD2408 /* AddHealthViewController.swift in Sources */,
 				5E3CABD223E8A76B00A2891E /* SceneDelegate.swift in Sources */,
 				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
@@ -294,6 +304,8 @@
 				E4AB526F23FE05E4001DADB1 /* HealthDetailViewController.swift in Sources */,
 				EA175766242BEC7200B8A8D6 /* CalendarVars.swift in Sources */,
 				E42778092429001E00BD2408 /* ScrollHealthViewController.swift in Sources */,
+				E427781524326CEC00BD2408 /* CompletedDetailViewController.swift in Sources */,
+				E427781324326CCE00BD2408 /* ToDoDetailViewController.swift in Sources */,
 				E4AB525323FB4F64001DADB1 /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
