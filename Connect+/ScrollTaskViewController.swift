@@ -120,6 +120,7 @@ class ScrollTaskViewController: UIViewController {
         
         //to dos
         let todo1 = DotButton(titleString: "Grocery Shopping")
+        todo1.addTarget(self, action: #selector(GoToShoppingToDo(_:)), for: .touchUpInside)
         stackView.addArrangedSubview(todo1)
         
         stackView.addArrangedSubview(subtitle2)
@@ -223,6 +224,11 @@ class ScrollTaskViewController: UIViewController {
     
     @objc func AddCookingBtnClicked(_ sender:UIButton) {
         let next = storyboard?.instantiateViewController(identifier: "AddCookingTaskViewController") as? AddCookingTaskViewController
+        self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func GoToShoppingToDo(_ sender: UIButton) {
+        let next = storyboard?.instantiateViewController(identifier: "ShoppingToDoDetailViewController") as? ShoppingToDoDetailViewController
         self.navigationController?.pushViewController(next!, animated: true)
     }
     
