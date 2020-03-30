@@ -127,6 +127,7 @@ class ScrollTaskViewController: UIViewController {
         
         //completed
         let completed1 = DotButton(titleString: "Bathroom Cleaning")
+        completed1.addTarget(self, action: #selector(GoToCompleted(_:)), for: .touchUpInside)
         stackView.addArrangedSubview(completed1)
         
         stackView.addArrangedSubview(subtitle3)
@@ -229,6 +230,21 @@ class ScrollTaskViewController: UIViewController {
     
     @objc func GoToShoppingToDo(_ sender: UIButton) {
         let next = storyboard?.instantiateViewController(identifier: "ShoppingToDoDetailViewController") as? ShoppingToDoDetailViewController
+        self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func GoToToDo(_ sender: UIButton) {
+        let taskname = sender.title(for: .normal)
+        let next = storyboard?.instantiateViewController(identifier: "ToDoDetailViewController") as? ToDoDetailViewController
+        next?.taskname = taskname!
+        self.navigationController?.pushViewController(next!, animated: true)
+        
+    }
+    
+    @objc func GoToCompleted(_ sender: UIButton) {
+        let taskname = sender.title(for: .normal)
+        let next = storyboard?.instantiateViewController(identifier: "CompletedDetailViewController") as? CompletedDetailViewController
+        next?.taskname = taskname!
         self.navigationController?.pushViewController(next!, animated: true)
     }
     
