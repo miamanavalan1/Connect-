@@ -291,6 +291,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
         }
     }
+    
+    @IBAction func showAlert(_ sender: Any) {
+        let alert = UIAlertController(title: "Success!", message: "Event Saved!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ViewController: UITextFieldDelegate{

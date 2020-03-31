@@ -1496,6 +1496,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnAddEvent:" destination="d3O-q8-ePd" eventType="touchUpInside" id="I5X-eQ-TTU"/>
+                                    <action selector="showAlert:" destination="d3O-q8-ePd" eventType="touchUpInside" id="p35-Ft-MUF"/>
                                 </connections>
                             </button>
                         </subviews>
