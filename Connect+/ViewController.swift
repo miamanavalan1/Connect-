@@ -2,21 +2,16 @@
 //  ViewController.swift
 //  Connect+
 //
-//  Created by Mia Manavalan on 2/3/20.
-//  Copyright © 2020 Mia Manavalan. All rights reserved.
+//  Code for calendar logic: https://github.com/StergRi/Calendar
 //
-//  calendar interface code reference: https://github.com/StergRi/Calendar
-
-//  btnAddEvent code reference: https://www.youtube.com/watch?v=sSFzcvvs4Oc&t=545s
-
-//  TextField code reference: https://www.youtube.com/watch?v=jY9t5rX8wHE
+//  Code for tap gesture: https://www.youtube.com/watch?v=jY9t5rX8wHE
+//
+//  Code for btnAddEvent: https://www.youtube.com/watch?v=sSFzcvvs4Oc&t=545s
 
 import UIKit
 import EventKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
     
     @IBOutlet weak var MonthLabel: UILabel!
     
@@ -48,11 +43,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         
         currentMonth = Months[month]
-        //MonthLabel.text = "\(currentMonth) \(year)"
+        MonthLabel.text = "\(currentMonth) \(year)"
         if weekday == 0 {
             weekday = 7
         }
         GetStartDateDayPosition()
+        
         configureTextFields()
         configureTapGesture()
         
@@ -67,18 +63,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         EndDateField.inputView = datePicker2
     }
     
-    @objc func dateChanged(datePicker: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, h:mm a"
-        DateField.text = dateFormatter.string(from: datePicker.date)
-    }
-    
-    @objc func dateChanged2(datePicker: UIDatePicker){
-           let dateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "MMM d, h:mm a"
-           EndDateField.text = dateFormatter.string(from: datePicker.date)
-       }
-        
     func GetStartDateDayPosition() {
         switch Direction{
         case 0:
@@ -114,7 +98,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         switch currentMonth {
         case "Dec":
             Direction = 1
-
             month = 0
             year += 1
             
@@ -154,7 +137,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         switch currentMonth {
         case "Jan":
             Direction = -1
-
             month = 11
             year -= 1
             
@@ -256,15 +238,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     private var datePicker2: UIDatePicker?
     
-    
     private func configureTapGesture(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap))
         view.addGestureRecognizer(tapGesture)
     }
     
     @objc func handleTap(){
-        print("Handle tap was called!")
         view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        DateField.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    @objc func dateChanged2(datePicker: UIDatePicker){
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "MMM d, h:mm a"
+           EndDateField.text = dateFormatter.string(from: datePicker.date)
     }
     
     private func configureTextFields(){
@@ -282,9 +274,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             if (granted) && (error == nil)
             {
-                print("granted: \(granted)")
-                print("error: \(error)")
-                
                 let event:EKEvent = EKEvent(eventStore: eventStore)
                 DispatchQueue.main.async {
                     event.title = "\(self.EventTitle.text!)"
@@ -299,10 +288,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 }catch let error as NSError{
                     print("error: \(error)")
                 }
-                print("Save Event!")
-            }
-            else{
-                print("error: \(error)")
             }
         }
     }

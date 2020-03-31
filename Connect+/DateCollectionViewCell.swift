@@ -1,11 +1,7 @@
 //
 //  DateCollectionViewCell.swift
-//  Connect+
 //
-//  Created by lujiaan on 3/25/20.
-//  Copyright © 2020 Mia Manavalan. All rights reserved.
-//
-//  code reference: https://github.com/StergRi/Calendar
+//  Code from: https://github.com/StergRi/Calendar
 
 import UIKit
 
@@ -14,7 +10,6 @@ class DateCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var DateLabel: UILabel!
     
     @IBOutlet weak var Circle: UIView!
-    
     
     func DrawCircle() {
         
@@ -39,7 +34,5 @@ class DateCollectionViewCell: UICollectionViewCell {
         CircleLayer.add(Animation, forKey: nil)
         Circle.layer.addSublayer(CircleLayer)
         Circle.layer.backgroundColor = UIColor.clear.cgColor
-        
     }
-    
 }
