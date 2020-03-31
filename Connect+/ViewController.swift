@@ -265,37 +265,43 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func btnAddEvent(_ sender: Any) {
-        
         view.endEditing(true)
-    
-        let eventStore: EKEventStore = EKEventStore()
         
-        eventStore.requestAccess(to: .event) { (granted, error) in
+            let eventStore: EKEventStore = EKEventStore()
             
-            if (granted) && (error == nil)
-            {
-                let event:EKEvent = EKEvent(eventStore: eventStore)
-                DispatchQueue.main.async {
-                    event.title = "\(self.EventTitle.text!)"
-                    event.notes = "\(self.EventNotes.text!)"
-                    event.startDate = self.datePicker?.date
-                    event.endDate = self.datePicker2?.date
-                }
+            eventStore.requestAccess(to: .event) { (granted, error) in
                 
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                }catch let error as NSError{
-                    print("error: \(error)")
+                if (granted) && (error == nil)
+                {
+                    let event:EKEvent = EKEvent(eventStore: eventStore)
+                    DispatchQueue.main.async {
+                        event.title = "\(self.EventTitle.text!)"
+                        event.notes = "\(self.EventNotes.text!)"
+                        event.startDate = self.datePicker?.date
+                        event.endDate = self.datePicker2?.date
+                    }
+                    
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                    }catch let error as NSError{
+                        print("error: \(error)")
+                    }
                 }
             }
-        }
     }
-    
+
     @IBAction func showAlert(_ sender: Any) {
         let alert = UIAlertController(title: "Success!", message: "Event Saved!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func clearAllField(_ sender: Any) {
+        self.EventTitle.text = ""
+        self.EventNotes.text = ""
+        self.DateField.text = ""
+        self.EndDateField.text = ""
     }
 }
 
