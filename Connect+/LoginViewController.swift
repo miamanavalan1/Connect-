@@ -36,6 +36,28 @@ class LoginViewController: UIViewController {
         //alertController = UIAlertController(title: "Login Success", message: "Login succeeded with granted permissions: \(grantedPermissions)", preferredStyle: .alert)
         //let homepagevc = self.storyboard?.instantiateViewController(identifier: "HomepageViewController") as? HomepageViewController
         //self.present(homepagevc!, animated: true, completion: nil)
+        let fb_login_url = URL(string: "http://127.0.0.1:8000/login_fb")!
+        let session = URLSession.shared
+        var is_newuser = false
+        struct test_newuser: Decodable{
+            let answer: String
+        }
+        let task = session.dataTask(with: fb_login_url, completionHandler: {data, response, error in
+            //print(error)
+            print(response)
+            if error != nil {
+                print(error)
+                return
+            }
+            let test: test_newuser = try! JSONDecoder().decode(test_newuser.self, from: data!)
+            print(test.answer)
+            if test.answer == "True" {
+                is_newuser = true
+            }
+        })
+        
+        task.resume()
+        
         let myTabBar = self.storyboard?.instantiateViewController(withIdentifier: "myTabBar") as! UITabBarController
         let tbDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
         tbDelegate.window?.rootViewController = myTabBar
