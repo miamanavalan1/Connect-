@@ -9,7 +9,7 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
-
+var unique_username = ""
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
         
         struct test_newuser: Decodable{
             let answer: String
+            let username: String
         }
         
         let task = session.dataTask(with: fb_login_url.url!, completionHandler: {data, response, error in
@@ -57,6 +58,9 @@ class LoginViewController: UIViewController {
             }
             let test: test_newuser = try! JSONDecoder().decode(test_newuser.self, from: data!)
             print(test.answer)
+            print(test.username)
+            unique_username = test.username
+            print(unique_username)
             if test.answer == "True" {
                 is_newuser = true
             }
