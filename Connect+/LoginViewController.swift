@@ -36,13 +36,19 @@ class LoginViewController: UIViewController {
         //alertController = UIAlertController(title: "Login Success", message: "Login succeeded with granted permissions: \(grantedPermissions)", preferredStyle: .alert)
         //let homepagevc = self.storyboard?.instantiateViewController(identifier: "HomepageViewController") as? HomepageViewController
         //self.present(homepagevc!, animated: true, completion: nil)
-        let fb_login_url = URL(string: "http://127.0.0.1:8000/login_fb")!
+        var fb_login_url = URLComponents(string: "http://127.0.0.1:8000/login_fb")!
         let session = URLSession.shared
         var is_newuser = false
+        
+        fb_login_url.queryItems = [URLQueryItem(name: "accessToken", value: AccessToken.current?.tokenString)]
+        
+        
+        
         struct test_newuser: Decodable{
             let answer: String
         }
-        let task = session.dataTask(with: fb_login_url, completionHandler: {data, response, error in
+        
+        let task = session.dataTask(with: fb_login_url.url!, completionHandler: {data, response, error in
             //print(error)
             print(response)
             if error != nil {
