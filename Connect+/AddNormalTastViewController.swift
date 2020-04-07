@@ -11,11 +11,20 @@ import UIKit
 class AddNormalTastViewController: UIViewController {
 
     @IBOutlet weak var textTaskName: UILabel!
+    
+    @IBOutlet weak var deadline: UITextField!
+    
+    
     var taskName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textTaskName.text = taskName
+        let datepicker = UIDatePicker()
+        datepicker.datePickerMode = UIDatePicker.Mode.date
+        datepicker.addTarget(self, action: #selector(DatePickerChanged(_:)), for: UIControl.Event.valueChanged)
+        deadline.inputView = datepicker
+        
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +36,17 @@ class AddNormalTastViewController: UIViewController {
         alertController = UIAlertController(title: "Success", message: "Task saved", preferredStyle: .alert)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func DatePickerChanged(_ sender: UIDatePicker){
+        let format = DateFormatter()
+        format.dateStyle = DateFormatter.Style.medium
+        format.timeStyle = DateFormatter.Style.none
+        deadline.text = format.string(from: sender.date)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     /*
     // MARK: - Navigation
