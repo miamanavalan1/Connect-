@@ -1782,6 +1782,7 @@
                     </view>
                     <connections>
                         <outlet property="deadline" destination="5su-tc-lOb" id="Pcx-wM-Wz8"/>
+                        <outlet property="detail" destination="Rrj-rM-bw4" id="4wI-ce-3rC"/>
                         <outlet property="textTaskName" destination="78S-Ur-qbI" id="Sdk-fM-HXx"/>
                     </connections>
                 </viewController>
