@@ -80,6 +80,7 @@ class AddNormalTastViewController: UIViewController {
         deadline.text = format.string(from: sender.date)
         
         let format_to_send = DateFormatter()
+        format_to_send.locale = Locale(identifier: "en-CA")
         format_to_send.dateStyle = DateFormatter.Style.short
         format_to_send.timeStyle = DateFormatter.Style.none
         deadline_to_send = format_to_send.string(from: sender.date)
