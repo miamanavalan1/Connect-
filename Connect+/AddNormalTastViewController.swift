@@ -36,6 +36,7 @@ class AddNormalTastViewController: UIViewController {
 
     
     @IBAction func SaveBtnClicked(_ sender: Any) {
+        var message_alert = "Task saved successfully."
         var if_success = true
         let session = URLSession.shared
         let add_task_url = URL(string: "http://127.0.0.1:8000/add_task")!
@@ -57,6 +58,7 @@ class AddNormalTastViewController: UIViewController {
                 let rst: add_task_response = try! JSONDecoder().decode(add_task_response.self, from: data!)
                 print(rst.success)
                 print(rst.message)
+                message_alert = rst.message
                 if rst.success == "False" {
                     if_success = false
                 }
@@ -68,7 +70,7 @@ class AddNormalTastViewController: UIViewController {
         
         let alertController: UIAlertController
         let okAction = UIAlertAction(title: "OK", style: .default, handler: { action in self.navigationController?.popViewController(animated: true) })
-        alertController = UIAlertController(title: "Success", message: "Task saved", preferredStyle: .alert)
+        alertController = UIAlertController(title: "", message: message_alert, preferredStyle: .alert)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
