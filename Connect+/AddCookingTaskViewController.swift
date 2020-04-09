@@ -22,7 +22,7 @@ class AddCookingTaskViewController: UIViewController {
         super.viewDidLoad()
         let datepicker = UIDatePicker()
         datepicker.datePickerMode = UIDatePicker.Mode.date
-        datepicker.addTarget(self, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        datepicker.addTarget(self, action: #selector(DatePickerChanged(_:)), for: UIControl.Event.valueChanged)
         deadline.inputView = datepicker
         // Do any additional setup after loading the view.
     }
