@@ -106,10 +106,6 @@
                                 <rect key="frame" x="291" y="268" width="143" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="enP-Cu-TYC">
-                                <rect key="frame" x="154" y="316" width="256" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Details" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lSb-oi-HiD">
                                 <rect key="frame" x="37" y="398" width="342" height="293"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,6 +145,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcF-tp-y4l">
+                                <rect key="frame" x="172" y="327" width="135" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="10I-WC-8OC"/>
@@ -156,6 +158,11 @@
                     <navigationItem key="navigationItem" id="oLg-sD-uXV">
                         <barButtonItem key="rightBarButtonItem" image="bell" id="VxP-io-TZ3"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="deadline" destination="jcF-tp-y4l" id="K90-Vf-j7Z"/>
+                        <outlet property="detail" destination="lSb-oi-HiD" id="szS-eq-vRr"/>
+                        <outlet property="title_diaplay" destination="Qcm-fe-6Kr" id="5QS-Ba-UFQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25f-If-ANV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1660,13 +1667,6 @@
                                 <rect key="frame" x="291" y="268" width="143" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="D0C-Ph-LIj">
-                                <rect key="frame" x="154" y="316" width="256" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="deadline:" destination="Nt2-i5-dwc" eventType="valueChanged" id="jnB-Wa-YQf"/>
-                                </connections>
-                            </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Details" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oa1-2A-5fX">
                                 <rect key="frame" x="37" y="398" width="342" height="293"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1706,14 +1706,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vke-Up-1z3">
+                                <rect key="frame" x="172" y="327" width="135" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="RZp-ST-MPE"/>
                     </view>
                     <navigationItem key="navigationItem" id="fEn-KS-0Tb"/>
+                    <connections>
+                        <outlet property="deadline" destination="Vke-Up-1z3" id="NyM-Bo-gJj"/>
+                        <outlet property="detail" destination="oa1-2A-5fX" id="0FT-JM-jyc"/>
+                        <outlet property="title_display" destination="TWX-li-IIH" id="L7R-ys-Kaz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDt-G5-DIi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Nt2-i5-dwc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2351" y="821"/>
         </scene>

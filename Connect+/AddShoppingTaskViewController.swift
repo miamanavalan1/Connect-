@@ -12,11 +12,22 @@ import UIKit
 
 
 class AddShoppingTaskViewController: UIViewController {
-
+    
+    @IBOutlet weak var title_diaplay: UILabel!
+    @IBOutlet weak var deadline: UITextField!
+    
+    @IBOutlet weak var detail: UITextField!
+    
+    var deadline_to_send = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let datepicker = UIDatePicker()
+        datepicker.datePickerMode = UIDatePicker.Mode.date
+        datepicker.addTarget(self, action: #selector(DatePickerChanged(_:)), for: UIControl.Event.valueChanged)
+        deadline.inputView = datepicker
         
     }
     
@@ -41,6 +52,21 @@ class AddShoppingTaskViewController: UIViewController {
         
     }
     
+    @objc func DatePickerChanged(_ sender: UIDatePicker){
+        let format = DateFormatter()
+        format.dateStyle = DateFormatter.Style.medium
+        format.timeStyle = DateFormatter.Style.none
+        deadline.text = format.string(from: sender.date)
+        
+        let format_to_send = DateFormatter()
+        format_to_send.locale = Locale(identifier: "en-CA")
+        format_to_send.dateStyle = DateFormatter.Style.short
+        format_to_send.timeStyle = DateFormatter.Style.none
+        deadline_to_send = format_to_send.string(from: sender.date)
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
 }
