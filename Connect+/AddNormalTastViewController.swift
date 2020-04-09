@@ -18,7 +18,7 @@ class AddNormalTastViewController: UIViewController {
     
     @IBOutlet weak var detail: UITextField!
 
-    var deadline_to_send = ""
+    var deadline_to_send = "2020-04-09"
     
     var taskName = ""
     
@@ -43,15 +43,18 @@ class AddNormalTastViewController: UIViewController {
         var add_task_request = URLRequest(url: add_task_url)
         add_task_request.httpMethod = "POST"
         add_task_request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let parameters = ["username": unique_username, "deadline": deadline_to_send, "title": taskName, "detail": detail.text] as [String : Any]
+        let parameters = ["unique_username": unique_username, "deadline": deadline_to_send, "title": taskName, "detail": detail.text] as [String : Any]
         let j_parameters = try! JSONSerialization.data(withJSONObject: parameters, options: [])
-        
+        add_task_request.httpBody = j_parameters
+        print("parameters are:")
+        print(j_parameters.base64EncodedString())
+        print("end of parameters")
         struct add_task_response: Decodable{
             let success: String
             let message: String
         }
         
-        let task = session.uploadTask(with: add_task_request, from: j_parameters) {
+        let task = session.dataTask(with: add_task_request as URLRequest) {
             data, response, error in
             print(response)
             if error == nil {
@@ -62,11 +65,12 @@ class AddNormalTastViewController: UIViewController {
                 if rst.success == "False" {
                     if_success = false
                 }
+                
             }
         }
         task.resume()
         
-        
+        print(if_success)
         
         let alertController: UIAlertController
         let okAction = UIAlertAction(title: "OK", style: .default, handler: { action in self.navigationController?.popViewController(animated: true) })
