@@ -77,15 +77,26 @@ class ScrollTaskViewController: UIViewController {
             let title: String
             let detail: String
             let deadline: String
-            let finished_at: String
+            let finished_at: String?
             let status: String
         }
         
         
         let task = session.dataTask(with: get_task_url.url!, completionHandler: {data, response, error in
+            print(response)
             print(data)
+            
             if error == nil {
+                
                 let tasks: [single_task] = try! JSONDecoder().decode([single_task].self, from: data!)
+                
+                for item in tasks {
+                    print(item.title)
+                    print(item.detail)
+                    print(item.deadline)
+                    print(item.finished_at)
+                    print(item.status)
+                }
                 
                 // sort into completed tasks and incomplete tasks
                 // add views here as it is task completion
