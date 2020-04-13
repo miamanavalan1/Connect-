@@ -69,6 +69,41 @@ class ScrollTaskViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var get_task_url = URLComponents(string: "http://127.0.0.1:8000/get_task")!
+        let session = URLSession.shared
+        get_task_url.queryItems = [URLQueryItem(name: "unique_username", value: unique_username)]
+        
+        struct single_task: Decodable{
+            let title: String
+            let detail: String
+            let deadline: String
+            let finished_at: String
+            let status: String
+        }
+        
+        
+        let task = session.dataTask(with: get_task_url.url!, completionHandler: {data, response, error in
+            print(data)
+            if error == nil {
+                let tasks: [single_task] = try! JSONDecoder().decode([single_task].self, from: data!)
+                
+                // sort into completed tasks and incomplete tasks
+                // add views here as it is task completion
+                // move all add view here
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+        })
+        task.resume()
+        
+        
+        
         
         var pagetitle: UILabel!
         pagetitle = UILabel(frame: CGRect(x: 0, y: 0, width: 414, height: 110))
