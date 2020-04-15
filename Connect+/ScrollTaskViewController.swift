@@ -283,6 +283,7 @@ class ScrollTaskViewController: UIViewController {
 
     }
     
+    
     @objc func NormalBtnClicked(_ sender: UIButton) {
         let buttonTitle = sender.title(for: .normal)
         let next = storyboard?.instantiateViewController(identifier: "AddNormalTastViewController") as? AddNormalTastViewController

@@ -39,6 +39,37 @@ class AddCookingTaskViewController: UIViewController {
     */
 
     @IBAction func SaveBtnClicked(_ sender: Any) {
+        let session = URLSession.shared
+        let add_task_url = URL(string: "http://127.0.0.1:8000/add_task")!
+        var add_task_request = URLRequest(url: add_task_url)
+        add_task_request.httpMethod = "POST"
+        add_task_request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let parameters = ["unique_username": unique_username, "deadline": deadline_to_send, "title": "Cooking", "detail": detail.text] as [String : Any]
+        let j_parameters = try! JSONSerialization.data(withJSONObject: parameters, options: [])
+        add_task_request.httpBody = j_parameters
+        print("parameters are:")
+        print(j_parameters.base64EncodedString())
+        print("end of parameters")
+        struct add_task_response: Decodable{
+            let success: String
+            let message: String
+        }
+        let task = session.dataTask(with: add_task_request as URLRequest) {
+            data, response, error in
+            print(response)
+            if error == nil {
+                let rst: add_task_response = try! JSONDecoder().decode(add_task_response.self, from: data!)
+                print(rst.success)
+                print(rst.message)
+                
+                if rst.success == "False" {
+                    print("not success")
+                }
+                
+            }
+        }
+        task.resume()
+        
         let alertController: UIAlertController
         let okAction = UIAlertAction(title: "OK", style: .default, handler: { action in self.navigationController?.popViewController(animated: true) })
         alertController = UIAlertController(title: "Success", message: "Task saved", preferredStyle: .alert)
