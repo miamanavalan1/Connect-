@@ -18,6 +18,28 @@ class ToDoDetailViewController: UIViewController {
     var deadline: String?
     var id: Int?
     
+    @IBAction func MarkAsDoneClicked(_ sender: Any) {
+        var complete_task_url = URLComponents(string: "http://127.0.0.1:8000/complete_task")!
+        let session = URLSession.shared
+        complete_task_url.queryItems = [URLQueryItem(name: "id", value: String(self.id!))]
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        let task = session.dataTask(with: complete_task_url.url!, completionHandler: {data, response, error in
+            if error != nil {
+                print("error happens")
+            }
+            semaphore.signal()
+        })
+        task.resume()
+        semaphore.wait()
+        
+        let alertController: UIAlertController
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { action in self.navigationController?.popViewController(animated: true) })
+        alertController = UIAlertController(title: "", message: "Task marked as done.", preferredStyle: .alert)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
