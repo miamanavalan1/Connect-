@@ -11,6 +11,8 @@ import UIKit
 class CompletedDetailViewController: UIViewController {
     var taskname = ""
     var finishtime = ""
+    var id: Int!
+    var detail: String?
     
     @IBOutlet weak var showtaskname: UITextField!
     @IBOutlet weak var showfinishtime: UILabel!
