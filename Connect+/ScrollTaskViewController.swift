@@ -13,6 +13,7 @@ class DotButton: UIButton {
     var deadline: String?
     var finished_at: String?
     var status: String?
+    var id: Int?
     required init(titleString: String) {
         
         super.init(frame: .zero)
@@ -83,6 +84,7 @@ class ScrollTaskViewController: UIViewController {
             let deadline: String
             let finished_at: String?
             let status: String
+            let id: String
         }
         
         
@@ -100,6 +102,7 @@ class ScrollTaskViewController: UIViewController {
                     print(item.deadline)
                     print(item.finished_at)
                     print(item.status)
+                    print(item.id)
                 }
                 
                 // sort into completed tasks and incomplete tasks

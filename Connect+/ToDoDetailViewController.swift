@@ -14,6 +14,8 @@ class ToDoDetailViewController: UIViewController {
     var taskdetail = ""
     var showtaskname: UILabel!
     var showtaskdetail: UILabel!
+    var deadline: String?
+    var id: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
