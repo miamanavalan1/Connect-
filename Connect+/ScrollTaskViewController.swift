@@ -67,13 +67,17 @@ class SquareButton: UIButton {
 
 class ScrollTaskViewController: UIViewController {
     
-    var stackView = UIStackView()
-    var scrollView = UIScrollView()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        arrangeview()
+    }
+    
+    func arrangeview() {
+        var stackView = UIStackView()
+        var scrollView = UIScrollView()
         var todo: [single_task] = []
         var completed: [single_task] = []
 
@@ -163,44 +167,44 @@ class ScrollTaskViewController: UIViewController {
         subtitle2.text = "Completed tasks in past 7 days"
         subtitle3.text = "Add a task"
         
-        self.view.addSubview(self.scrollView)
+        self.view.addSubview(scrollView)
         
-        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-        self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
-        self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40).isActive = true
-        self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40).isActive = true
-        self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
         
-        self.stackView.axis = .vertical
-        self.stackView.distribution = .fill
-        self.stackView.spacing = 10
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 10
         
-        self.scrollView.addSubview(self.stackView)
+        scrollView.addSubview(stackView)
         
-        self.stackView.addArrangedSubview(pagetitle)
+        stackView.addArrangedSubview(pagetitle)
         
         //todo title
         if !todo.isEmpty {
-            self.stackView.addArrangedSubview(subtitle1)
+            stackView.addArrangedSubview(subtitle1)
             //add all todo tasks as button to stack view
             for item in todo {
                 let todobutton = DotButton(titleString: item.title)
                 todobutton.addTarget(self, action: #selector(self.GoToToDo(_:)), for: .touchUpInside)
-                self.stackView.addArrangedSubview(todobutton)
+                stackView.addArrangedSubview(todobutton)
             }
         }
         
         if !completed.isEmpty {
-            self.stackView.addArrangedSubview(subtitle2)
+            stackView.addArrangedSubview(subtitle2)
             //add all completed as button to stack view
             for item in completed {
                 let completedbutton = DotButton(titleString: item.title)
                 completedbutton.addTarget(self, action: #selector(self.GoToCompleted(_:)), for: .touchUpInside)
-                self.stackView.addArrangedSubview(completedbutton)
+                stackView.addArrangedSubview(completedbutton)
             }
         }
         
-        self.stackView.addArrangedSubview(subtitle3)
+        stackView.addArrangedSubview(subtitle3)
         
         
         //add tasks options
@@ -222,9 +226,9 @@ class ScrollTaskViewController: UIViewController {
         row3.spacing = 26
         
         
-        self.stackView.addArrangedSubview(row1)
-        self.stackView.addArrangedSubview(row2)
-        self.stackView.addArrangedSubview(row3)
+        stackView.addArrangedSubview(row1)
+        stackView.addArrangedSubview(row2)
+        stackView.addArrangedSubview(row3)
         
         
         let sbtn1 = SquareButton(titleString: "Grocery Shopping")
@@ -260,9 +264,9 @@ class ScrollTaskViewController: UIViewController {
         row2.translatesAutoresizingMaskIntoConstraints = false
         row3.translatesAutoresizingMaskIntoConstraints = false
         
-        row1.widthAnchor.constraint(equalTo: self.stackView.widthAnchor).isActive = true
-        row2.widthAnchor.constraint(equalTo: self.stackView.widthAnchor).isActive = true
-        row3.widthAnchor.constraint(equalTo: self.stackView.widthAnchor).isActive = true
+        row1.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        row2.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        row3.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
         
         //row1.topAnchor.constraint(equalTo: subtitle3.bottomAnchor).isActive = true
@@ -270,15 +274,17 @@ class ScrollTaskViewController: UIViewController {
         
         
         
-        self.stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.stackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
-        self.stackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
-        self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
-        self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
-        self.stackView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         
-        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(refreshControl:)), for: .valueChanged)
+        scrollView.refreshControl = refreshControl
         
 
     }
@@ -327,6 +333,18 @@ class ScrollTaskViewController: UIViewController {
         let next = storyboard?.instantiateViewController(identifier: "CompletedDetailViewController") as? CompletedDetailViewController
         next?.taskname = taskname!
         self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func refresh(refreshControl: UIRefreshControl) {
+        print("refreshing")
+        for v in self.view.subviews {
+            v.removeFromSuperview()
+        }
+        //self.stackView = UIStackView()
+        //self.scrollView = UIScrollView()
+        arrangeview()
+        //self.view.setNeedsDisplay()
+        refreshControl.endRefreshing()
     }
     
 
