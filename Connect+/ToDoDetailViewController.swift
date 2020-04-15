@@ -34,6 +34,7 @@ class ToDoDetailViewController: UIViewController {
         showtaskdetail.text = taskdetail
         showtaskdetail.textColor = UIColor.black
         showtaskdetail.font = UIFont(name: "Assistant-Regular", size: 20.0)
+        showtaskdetail.sizeToFit()
         
         self.view.addSubview(showtaskname)
         self.view.addSubview(showtaskdetail)

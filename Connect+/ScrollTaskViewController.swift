@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class DotButton: UIButton {
     var detail: String?
@@ -72,6 +73,9 @@ class ScrollTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var todo: [single_task] = []
+        var completed: [single_task] = []
 
         // Do any additional setup after loading the view.
         var get_task_url = URLComponents(string: "http://127.0.0.1:8000/get_task")!
@@ -86,6 +90,8 @@ class ScrollTaskViewController: UIViewController {
             let status: String
             let id: String
         }
+        
+        let semaphore = DispatchSemaphore(value: 0)
         
         
         let task = session.dataTask(with: get_task_url.url!, completionHandler: {data, response, error in
@@ -109,19 +115,22 @@ class ScrollTaskViewController: UIViewController {
                 // add views here as it is task completion
                 // move all add view here
                 
+                for item in tasks {
+                    if item.status == "incompleted" {
+                        todo.append(item)
+                    } else {
+                        completed.append(item)
+                    }
+                }
                 
-                
-                
-                
-                
+                semaphore.signal()
                 
                 
             }
         })
         task.resume()
         
-        
-        
+        semaphore.wait()
         
         var pagetitle: UILabel!
         pagetitle = UILabel(frame: CGRect(x: 0, y: 0, width: 414, height: 110))
@@ -154,36 +163,45 @@ class ScrollTaskViewController: UIViewController {
         subtitle2.text = "Completed tasks in past 7 days"
         subtitle3.text = "Add a task"
         
-        self.view.addSubview(scrollView)
+        self.view.addSubview(self.scrollView)
         
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
+        self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
+        self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40).isActive = true
+        self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40).isActive = true
+        self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
         
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = 10
+        self.stackView.axis = .vertical
+        self.stackView.distribution = .fill
+        self.stackView.spacing = 10
         
-        scrollView.addSubview(stackView)
+        self.scrollView.addSubview(self.stackView)
         
-        stackView.addArrangedSubview(pagetitle)
-        stackView.addArrangedSubview(subtitle1)
+        self.stackView.addArrangedSubview(pagetitle)
         
-        //to dos
-        let todo1 = DotButton(titleString: "Grocery Shopping")
-        todo1.addTarget(self, action: #selector(GoToShoppingToDo(_:)), for: .touchUpInside)
-        stackView.addArrangedSubview(todo1)
+        //todo title
+        if !todo.isEmpty {
+            self.stackView.addArrangedSubview(subtitle1)
+            //add all todo tasks as button to stack view
+            for item in todo {
+                let todobutton = DotButton(titleString: item.title)
+                todobutton.addTarget(self, action: #selector(self.GoToToDo(_:)), for: .touchUpInside)
+                self.stackView.addArrangedSubview(todobutton)
+            }
+        }
         
-        stackView.addArrangedSubview(subtitle2)
+        if !completed.isEmpty {
+            self.stackView.addArrangedSubview(subtitle2)
+            //add all completed as button to stack view
+            for item in completed {
+                let completedbutton = DotButton(titleString: item.title)
+                completedbutton.addTarget(self, action: #selector(self.GoToCompleted(_:)), for: .touchUpInside)
+                self.stackView.addArrangedSubview(completedbutton)
+            }
+        }
         
-        //completed
-        let completed1 = DotButton(titleString: "Bathroom Cleaning")
-        completed1.addTarget(self, action: #selector(GoToCompleted(_:)), for: .touchUpInside)
-        stackView.addArrangedSubview(completed1)
+        self.stackView.addArrangedSubview(subtitle3)
         
-        stackView.addArrangedSubview(subtitle3)
         
         //add tasks options
         
@@ -204,9 +222,9 @@ class ScrollTaskViewController: UIViewController {
         row3.spacing = 26
         
         
-        stackView.addArrangedSubview(row1)
-        stackView.addArrangedSubview(row2)
-        stackView.addArrangedSubview(row3)
+        self.stackView.addArrangedSubview(row1)
+        self.stackView.addArrangedSubview(row2)
+        self.stackView.addArrangedSubview(row3)
         
         
         let sbtn1 = SquareButton(titleString: "Grocery Shopping")
@@ -218,13 +236,13 @@ class ScrollTaskViewController: UIViewController {
         
         
         //AddShoppingTaskViewController
-        sbtn1.addTarget(self, action: #selector(AddShoppingBtnClicked(_:)), for: .touchUpInside)
-        sbtn2.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
-        sbtn3.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
-        sbtn4.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
+        sbtn1.addTarget(self, action: #selector(self.AddShoppingBtnClicked(_:)), for: .touchUpInside)
+        sbtn2.addTarget(self, action: #selector(self.NormalBtnClicked(_:)), for: .touchUpInside)
+        sbtn3.addTarget(self, action: #selector(self.NormalBtnClicked(_:)), for: .touchUpInside)
+        sbtn4.addTarget(self, action: #selector(self.NormalBtnClicked(_:)), for: .touchUpInside)
         //AddCookingTaskViewController
-        sbtn5.addTarget(self, action: #selector(AddCookingBtnClicked(_:)), for: .touchUpInside)
-        sbtn6.addTarget(self, action: #selector(NormalBtnClicked(_:)), for: .touchUpInside)
+        sbtn5.addTarget(self, action: #selector(self.AddCookingBtnClicked(_:)), for: .touchUpInside)
+        sbtn6.addTarget(self, action: #selector(self.NormalBtnClicked(_:)), for: .touchUpInside)
         
         
         
@@ -242,9 +260,9 @@ class ScrollTaskViewController: UIViewController {
         row2.translatesAutoresizingMaskIntoConstraints = false
         row3.translatesAutoresizingMaskIntoConstraints = false
         
-        row1.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
-        row2.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
-        row3.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        row1.widthAnchor.constraint(equalTo: self.stackView.widthAnchor).isActive = true
+        row2.widthAnchor.constraint(equalTo: self.stackView.widthAnchor).isActive = true
+        row3.widthAnchor.constraint(equalTo: self.stackView.widthAnchor).isActive = true
         
         
         //row1.topAnchor.constraint(equalTo: subtitle3.bottomAnchor).isActive = true
@@ -252,16 +270,17 @@ class ScrollTaskViewController: UIViewController {
         
         
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        self.stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.stackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
+        self.stackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
+        self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
+        self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
         
-        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        self.stackView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor).isActive = true
         
         
         
+
     }
     
     @objc func NormalBtnClicked(_ sender: UIButton) {
@@ -287,10 +306,18 @@ class ScrollTaskViewController: UIViewController {
     }
     
     @objc func GoToToDo(_ sender: UIButton) {
-        let taskname = sender.title(for: .normal)
-        let next = storyboard?.instantiateViewController(identifier: "ToDoDetailViewController") as? ToDoDetailViewController
-        next?.taskname = taskname!
-        self.navigationController?.pushViewController(next!, animated: true)
+        if sender.title(for: .normal) == "Grocery Shopping" {
+            print("shopping todo")
+            let next = storyboard?.instantiateViewController(identifier: "ShoppingToDoDetailViewController") as? ShoppingToDoDetailViewController
+            self.navigationController?.pushViewController(next!, animated: true)
+        } else {
+            print("not a shopping todo")
+            let taskname = sender.title(for: .normal)
+            let next = storyboard?.instantiateViewController(identifier: "ToDoDetailViewController") as? ToDoDetailViewController
+            next?.taskname = taskname!
+            self.navigationController?.pushViewController(next!, animated: true)
+            
+        }
         
     }
     
