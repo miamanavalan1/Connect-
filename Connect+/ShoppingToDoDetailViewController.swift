@@ -9,7 +9,7 @@
 import UIKit
 
 class ShoppingToDoDetailViewController: UIViewController {
-    var deadline = "Jan 20, 2020"
+    var deadline = ""
     var content = ""
     var showddl: UILabel!
     var showcontent: UILabel!
@@ -18,7 +18,7 @@ class ShoppingToDoDetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        content = "Eggs\n"+"Butter\n"+"Bread\n"+"Milk"
+        //content = "Eggs\n"+"Butter\n"+"Bread\n"+"Milk"
         
         showddl = UILabel(frame: CGRect(x: 32, y: 606, width: 278, height: 27))
         showddl.text = "By " + deadline

@@ -14,6 +14,7 @@ class ToDoDetailViewController: UIViewController {
     var taskdetail = ""
     var showtaskname: UILabel!
     var showtaskdetail: UILabel!
+    var showdeadline: UILabel!
     var deadline: String?
     var id: Int?
     
@@ -22,7 +23,7 @@ class ToDoDetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        taskdetail = "detail"
+        //taskdetail = "detail"
         
         showtaskname = UILabel(frame: CGRect(x: 7, y: 137, width: 400, height: 37))
         showtaskname.text = taskname
@@ -36,8 +37,14 @@ class ToDoDetailViewController: UIViewController {
         showtaskdetail.font = UIFont(name: "Assistant-Regular", size: 20.0)
         showtaskdetail.sizeToFit()
         
+        showdeadline = UILabel(frame: CGRect(x: 37, y: 332, width: 342, height: 25))
+        showdeadline.text = "Complete by " + deadline!
+        showdeadline.textColor = UIColor.black
+        showdeadline.font = UIFont(name: "Marvel-Regular", size: 20.0)
+        
         self.view.addSubview(showtaskname)
         self.view.addSubview(showtaskdetail)
+        self.view.addSubview(showdeadline)
         
     }
     

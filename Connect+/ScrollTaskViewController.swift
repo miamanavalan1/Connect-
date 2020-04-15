@@ -190,6 +190,11 @@ class ScrollTaskViewController: UIViewController {
             for item in todo {
                 let todobutton = DotButton(titleString: item.title)
                 todobutton.addTarget(self, action: #selector(self.GoToToDo(_:)), for: .touchUpInside)
+                todobutton.deadline = item.deadline
+                todobutton.detail = item.detail
+                todobutton.finished_at = item.finished_at
+                todobutton.id = Int(item.id)
+                todobutton.status = item.status
                 stackView.addArrangedSubview(todobutton)
             }
         }
@@ -200,6 +205,11 @@ class ScrollTaskViewController: UIViewController {
             for item in completed {
                 let completedbutton = DotButton(titleString: item.title)
                 completedbutton.addTarget(self, action: #selector(self.GoToCompleted(_:)), for: .touchUpInside)
+                completedbutton.deadline = item.deadline
+                completedbutton.detail = item.detail
+                completedbutton.finished_at = item.finished_at
+                completedbutton.id = Int(item.id)
+                completedbutton.status = item.status
                 stackView.addArrangedSubview(completedbutton)
             }
         }
@@ -307,31 +317,40 @@ class ScrollTaskViewController: UIViewController {
         self.navigationController?.pushViewController(next!, animated: true)
     }
     
-    @objc func GoToShoppingToDo(_ sender: UIButton) {
+    @objc func GoToShoppingToDo(_ sender: DotButton) {
         let next = storyboard?.instantiateViewController(identifier: "ShoppingToDoDetailViewController") as? ShoppingToDoDetailViewController
         self.navigationController?.pushViewController(next!, animated: true)
     }
     
-    @objc func GoToToDo(_ sender: UIButton) {
+    @objc func GoToToDo(_ sender: DotButton) {
         if sender.title(for: .normal) == "Grocery Shopping" {
             print("shopping todo")
             let next = storyboard?.instantiateViewController(identifier: "ShoppingToDoDetailViewController") as? ShoppingToDoDetailViewController
+            next?.deadline = sender.deadline!
+            next?.content = sender.detail!
+            
             self.navigationController?.pushViewController(next!, animated: true)
         } else {
             print("not a shopping todo")
             let taskname = sender.title(for: .normal)
             let next = storyboard?.instantiateViewController(identifier: "ToDoDetailViewController") as? ToDoDetailViewController
             next?.taskname = taskname!
+            next?.taskdetail = sender.detail!
+            next?.deadline = sender.deadline
+            next?.id = sender.id
             self.navigationController?.pushViewController(next!, animated: true)
             
         }
         
     }
     
-    @objc func GoToCompleted(_ sender: UIButton) {
+    @objc func GoToCompleted(_ sender: DotButton) {
         let taskname = sender.title(for: .normal)
         let next = storyboard?.instantiateViewController(identifier: "CompletedDetailViewController") as? CompletedDetailViewController
         next?.taskname = taskname!
+        next?.finishtime = sender.finished_at!
+        next?.id = sender.id
+        next?.detail = sender.detail
         self.navigationController?.pushViewController(next!, animated: true)
     }
     
