@@ -9,6 +9,10 @@
 import UIKit
 
 class DotButton: UIButton {
+    var detail: String?
+    var deadline: String?
+    var finished_at: String?
+    var status: String?
     required init(titleString: String) {
         
         super.init(frame: .zero)
