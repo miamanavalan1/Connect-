@@ -142,8 +142,8 @@ class ScrollTaskViewController: UIViewController {
         pagetitle.heightAnchor.constraint(equalToConstant: 110).isActive = true
         pagetitle.text = "Tasks"
         pagetitle.textAlignment = .center
-        pagetitle.font = UIFont(name: "Marvel-Bold", size: 30.0)
-        pagetitle.textColor = UIColor.black
+        pagetitle.font = UIFont(name: "Marvel-Bold", size: 40.0)
+        pagetitle.textColor = UIColor.darkGray
         
         var subtitle1: UILabel!
         var subtitle2: UILabel!
@@ -158,12 +158,12 @@ class ScrollTaskViewController: UIViewController {
         subtitle1.textAlignment = .left
         subtitle2.textAlignment = .left
         subtitle3.textAlignment = .left
-        subtitle1.font = UIFont(name: "Marvel-Regular", size: 20.0)
-        subtitle2.font = UIFont(name: "Marvel-Regular", size: 20.0)
-        subtitle3.font = UIFont(name: "Marvel-Regular", size: 20.0)
-        subtitle1.textColor = UIColor.black
-        subtitle2.textColor = UIColor.black
-        subtitle3.textColor = UIColor.black
+        subtitle1.font = UIFont(name: "Marvel-Regular", size: 30.0)
+        subtitle2.font = UIFont(name: "Marvel-Regular", size: 30.0)
+        subtitle3.font = UIFont(name: "Marvel-Regular", size: 30.0)
+        subtitle1.textColor = UIColor.darkGray
+        subtitle2.textColor = UIColor.darkGray
+        subtitle3.textColor = UIColor.darkGray
         subtitle1.text = "Tasks to complete"
         subtitle2.text = "Completed tasks in past 7 days"
         subtitle3.text = "Add a task"
@@ -176,9 +176,12 @@ class ScrollTaskViewController: UIViewController {
         scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 10
+        stackView.spacing = 20
         
         scrollView.addSubview(stackView)
         

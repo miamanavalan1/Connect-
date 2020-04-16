@@ -128,6 +128,7 @@ class NewsItem : UIView {
 class ScrollHomeViewController: UIViewController {
     var stackView = UIStackView()
     var scrollView = UIScrollView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,6 +143,8 @@ class ScrollHomeViewController: UIViewController {
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         
         let homeview: UIView!
         homeview = UIView(frame: CGRect(x: 0, y: 100, width: 414, height: 700))

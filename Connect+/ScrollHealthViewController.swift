@@ -87,6 +87,9 @@ class ScrollHealthViewController: UIViewController {
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 10
