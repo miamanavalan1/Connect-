@@ -20,9 +20,9 @@ class DotButton: UIButton {
         super.init(frame: .zero)
         backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         tintColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
-        layer.cornerRadius = 8
-        layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        layer.shadowRadius = 2
+        layer.cornerRadius = 10
+        layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        layer.shadowRadius = 4
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 0, height: 0)
         
@@ -53,7 +53,7 @@ class SquareButton: UIButton {
         titleLabel?.textAlignment = .center
         backgroundColor = #colorLiteral(red: 0.9631050229, green: 0.8972646594, blue: 0.8682072759, alpha: 1)
         layer.cornerRadius = 10
-        layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         layer.shadowRadius = 4
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -61,7 +61,7 @@ class SquareButton: UIButton {
         frame.size = CGSize(width: 150, height: 100)
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 100).isActive = true
-        widthAnchor.constraint(equalToConstant: 150).isActive = true
+        widthAnchor.constraint(equalToConstant: 165).isActive = true
         
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .center
@@ -83,6 +83,7 @@ class ScrollTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         arrangeview()
     }
     
@@ -245,20 +246,15 @@ class ScrollTaskViewController: UIViewController {
         row2.axis = .horizontal
         row3.axis = .horizontal
         
-        row1.distribution = .fill
-        row2.distribution = .fill
-        row3.distribution = .fill
+        row1.distribution = .equalCentering
+        row2.distribution = .equalCentering
+        row3.distribution = .equalCentering
         
         row1.spacing = 26
         row2.spacing = 26
         row3.spacing = 26
         
-        row1.isLayoutMarginsRelativeArrangement = true
-        row1.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
-        row2.isLayoutMarginsRelativeArrangement = true
-        row2.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
-        row3.isLayoutMarginsRelativeArrangement = true
-        row3.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+       
         
         stackView.addArrangedSubview(row1)
         stackView.addArrangedSubview(row2)
@@ -302,6 +298,13 @@ class ScrollTaskViewController: UIViewController {
         row2.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         row3.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
+        row1.isLayoutMarginsRelativeArrangement = true
+        row1.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        row2.isLayoutMarginsRelativeArrangement = true
+        row2.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        row3.isLayoutMarginsRelativeArrangement = true
+        row3.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        
         
         //row1.topAnchor.constraint(equalTo: subtitle3.bottomAnchor).isActive = true
         
@@ -314,7 +317,7 @@ class ScrollTaskViewController: UIViewController {
         stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
-        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = false
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(refreshControl:)), for: .valueChanged)
