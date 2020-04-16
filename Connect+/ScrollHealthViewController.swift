@@ -82,10 +82,10 @@ class ScrollHealthViewController: UIViewController {
         self.view.addSubview(scrollView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         stackView.axis = .vertical
         stackView.distribution = .fill

@@ -44,8 +44,20 @@
                         <viewLayoutGuide key="safeArea" id="hiS-Kj-yQF"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wkt-6t-vJp">
-                        <barButtonItem key="leftBarButtonItem" title="Connect+" style="plain" id="A13-m2-xsR">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1qi-F3-n4Y">
+                            <view key="customView" contentMode="scaleToFill" id="yt7-vZ-s08">
+                                <rect key="frame" x="355" y="2.5" width="39" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Lz9-7g-vUw">
+                                        <rect key="frame" x="11" y="6" width="27" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82352941180000006" green="0.89019607840000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -1321,11 +1333,46 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GXe-oo-1cQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="t8a-Px-j2L"/>
+                    <navigationItem key="navigationItem" id="t8a-Px-j2L">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="aaW-m9-HT6">
+                            <view key="customView" contentMode="scaleToFill" id="Dvg-zH-O2Z">
+                                <rect key="frame" x="355" y="2.5" width="39" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d2z-zu-Bka">
+                                        <rect key="frame" x="11" y="6" width="27" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82352941180000006" green="0.89019607840000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipx-te-mUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4718.840579710145" y="2375.8928571428569"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="n2N-Gq-oYr">
+            <objects>
+                <navigationController id="uh6-vW-T4d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="8zr-IY-Ucs"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fzf-Jy-gSM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.82352941180000006" green="0.89019607840000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="d3O-q8-ePd" kind="relationship" relationship="rootViewController" id="Yg4-E9-dPv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26G-Dg-8YI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1555" y="3230"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="srC-dI-zTu">
@@ -1335,19 +1382,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6x-gg-tW9">
-                                <rect key="frame" x="0.0" y="36" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.82352941180000006" green="0.89019607840000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <items>
-                                    <navigationItem id="P1R-DY-lPd"/>
-                                </items>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VBT-hg-gN2">
-                                <rect key="frame" x="366" y="52" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fxf-qW-1Sv">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1522,6 +1556,23 @@
                         <viewLayoutGuide key="safeArea" id="Hxp-0T-mce"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="ikk-LL-qVP"/>
+                    <navigationItem key="navigationItem" id="NPf-bU-Hpn">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="tQG-TL-01M">
+                            <view key="customView" contentMode="scaleToFill" id="6Bq-Qr-f8B">
+                                <rect key="frame" x="302" y="5.5" width="39" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b0w-5Z-MY5">
+                                        <rect key="frame" x="11" y="6" width="27" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82352941180000006" green="0.89019607840000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Calendar" destination="m9f-Rs-msT" id="7U8-Ce-tQN"/>
                         <outlet property="DateField" destination="oB5-jT-5LJ" id="fgS-TJ-xox"/>
@@ -1533,7 +1584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GdM-46-v1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2497.1014492753625" y="1498.6607142857142"/>
+            <point key="canvasLocation" x="-645" y="3230"/>
         </scene>
         <!--Completed Detail View Controller-->
         <scene sceneID="4n2-1T-WRy">
@@ -1885,7 +1936,7 @@
                         <segue destination="JAo-RH-q4j" kind="relationship" relationship="viewControllers" id="eUl-wH-zC3"/>
                         <segue destination="e3v-pu-xjP" kind="relationship" relationship="viewControllers" id="ZrK-mc-Am0"/>
                         <segue destination="ynH-cV-uTN" kind="relationship" relationship="viewControllers" id="Hsz-bX-MOX"/>
-                        <segue destination="d3O-q8-ePd" kind="relationship" relationship="viewControllers" id="6xw-Qr-pkc"/>
+                        <segue destination="uh6-vW-T4d" kind="relationship" relationship="viewControllers" id="Pbh-gg-xei"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWD-eN-W9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

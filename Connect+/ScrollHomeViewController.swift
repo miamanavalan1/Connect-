@@ -122,10 +122,10 @@ class ScrollHomeViewController: UIViewController {
         self.view.addSubview(scrollView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         let homeview: UIView!
         homeview = UIView(frame: CGRect(x: 0, y: 100, width: 414, height: 700))

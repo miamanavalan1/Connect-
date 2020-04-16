@@ -127,10 +127,11 @@ class ScrollTaskViewController: UIViewController {
                     }
                 }
                 
-                semaphore.signal()
+                
                 
                 
             }
+            semaphore.signal()
         })
         task.resume()
         
@@ -170,10 +171,10 @@ class ScrollTaskViewController: UIViewController {
         self.view.addSubview(scrollView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         
         stackView.axis = .vertical
         stackView.distribution = .fill
