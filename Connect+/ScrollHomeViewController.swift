@@ -36,7 +36,7 @@ class NewsItem : UIView {
             row2 = UILabel(frame: CGRect(x: 120, y: 34, width: 280, height: 26))
             rowtime = UILabel(frame: CGRect(x: 120, y: 64, width: 280, height: 12))
             
-            row1.layer.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.8705882353, blue: 0.8392156863, alpha: 1)
+            row1.layer.backgroundColor = #colorLiteral(red: 0.9631050229, green: 0.8972646594, blue: 0.8682072759, alpha: 1)
             row1.text = "You " + self.action! + "\t"
             row1.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
             row1.textAlignment = .right
@@ -143,8 +143,8 @@ class ScrollHomeViewController: UIViewController {
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
+        //scrollView.showsHorizontalScrollIndicator = false
+        //scrollView.showsVerticalScrollIndicator = false
         
         let homeview: UIView!
         homeview = UIView(frame: CGRect(x: 0, y: 100, width: 414, height: 700))

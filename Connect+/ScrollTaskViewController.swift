@@ -20,6 +20,12 @@ class DotButton: UIButton {
         super.init(frame: .zero)
         backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         tintColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
+        layer.cornerRadius = 8
+        layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        layer.shadowRadius = 2
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        
         frame.size = CGSize(width: 332, height: 60)
         translatesAutoresizingMaskIntoConstraints = false
         //widthAnchor.constraint(equalToConstant: 332).isActive = true
@@ -30,7 +36,6 @@ class DotButton: UIButton {
         titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 20)
         setImage(UIImage(named: "ellipse.png"), for: .normal)
         imageEdgeInsets = UIEdgeInsets(top: 20, left: 292, bottom: 20, right: 20)
-        
     }
     
     
@@ -44,17 +49,23 @@ class SquareButton: UIButton {
     
     required init(titleString: String) {
         super.init(frame: .zero)
-        backgroundColor = #colorLiteral(red: 0.937254902, green: 0.8705882353, blue: 0.8392156863, alpha: 1)
-        setTitleColor(UIColor.black, for: .normal)
-        frame.size = CGSize(width: 154, height: 100)
+        titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+        titleLabel?.textAlignment = .center
+        backgroundColor = #colorLiteral(red: 0.9631050229, green: 0.8972646594, blue: 0.8682072759, alpha: 1)
+        layer.cornerRadius = 10
+        layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        layer.shadowRadius = 4
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        setTitleColor(UIColor.darkGray, for: .normal)
+        frame.size = CGSize(width: 150, height: 100)
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 100).isActive = true
-        widthAnchor.constraint(equalToConstant: 154).isActive = true
+        widthAnchor.constraint(equalToConstant: 150).isActive = true
         
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .center
-        titleLabel?.font = UIFont(name: "Assistant-Regular", size: 17.0)
-
+        titleLabel?.font = UIFont(name: "Assistant-Bold", size: 17.0)
     }
     
     
@@ -158,9 +169,9 @@ class ScrollTaskViewController: UIViewController {
         subtitle1.textAlignment = .left
         subtitle2.textAlignment = .left
         subtitle3.textAlignment = .left
-        subtitle1.font = UIFont(name: "Marvel-Regular", size: 30.0)
-        subtitle2.font = UIFont(name: "Marvel-Regular", size: 30.0)
-        subtitle3.font = UIFont(name: "Marvel-Regular", size: 30.0)
+        subtitle1.font = UIFont(name: "Marvel-Bold", size: 25.0)
+        subtitle2.font = UIFont(name: "Marvel-Bold", size: 25.0)
+        subtitle3.font = UIFont(name: "Marvel-Bold", size: 25.0)
         subtitle1.textColor = UIColor.darkGray
         subtitle2.textColor = UIColor.darkGray
         subtitle3.textColor = UIColor.darkGray
@@ -172,16 +183,19 @@ class ScrollTaskViewController: UIViewController {
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
+        //scrollView.showsHorizontalScrollIndicator = false
+        //scrollView.showsVerticalScrollIndicator = false
         
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 20
+        
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 27, bottom: 0, trailing: 27)
         
         scrollView.addSubview(stackView)
         
@@ -226,7 +240,7 @@ class ScrollTaskViewController: UIViewController {
         var row1 = UIStackView()
         var row2 = UIStackView()
         var row3 = UIStackView()
-        
+                
         row1.axis = .horizontal
         row2.axis = .horizontal
         row3.axis = .horizontal
@@ -239,16 +253,22 @@ class ScrollTaskViewController: UIViewController {
         row2.spacing = 26
         row3.spacing = 26
         
+        row1.isLayoutMarginsRelativeArrangement = true
+        row1.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        row2.isLayoutMarginsRelativeArrangement = true
+        row2.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        row3.isLayoutMarginsRelativeArrangement = true
+        row3.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
         
         stackView.addArrangedSubview(row1)
         stackView.addArrangedSubview(row2)
         stackView.addArrangedSubview(row3)
         
         
-        let sbtn1 = SquareButton(titleString: "Grocery Shopping")
-        let sbtn2 = SquareButton(titleString: "Bathroom Cleaning")
-        let sbtn3 = SquareButton(titleString: "Mopping Floors")
-        let sbtn4 = SquareButton(titleString: "Kitchen Cleaning")
+        let sbtn1 = SquareButton(titleString: "Grocery\nShopping")
+        let sbtn2 = SquareButton(titleString: "Bathroom\nCleaning")
+        let sbtn3 = SquareButton(titleString: "Mopping\nFloors")
+        let sbtn4 = SquareButton(titleString: "Kitchen\nCleaning")
         let sbtn5 = SquareButton(titleString: "Cooking")
         let sbtn6 = SquareButton(titleString: "Dishes")
         

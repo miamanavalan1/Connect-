@@ -83,16 +83,19 @@ class ScrollHealthViewController: UIViewController {
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
+        //scrollView.showsHorizontalScrollIndicator = false
+        //scrollView.showsVerticalScrollIndicator = false
         
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 10
+        
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 27, bottom: 0, trailing: 27)
         
         scrollView.addSubview(stackView)
         
@@ -136,6 +139,15 @@ class ScrollHealthViewController: UIViewController {
         row2.spacing = 26
         row3.spacing = 26
         row4.spacing = 26
+        
+        row1.isLayoutMarginsRelativeArrangement = true
+        row1.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        row2.isLayoutMarginsRelativeArrangement = true
+        row2.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        row3.isLayoutMarginsRelativeArrangement = true
+        row3.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+        row4.isLayoutMarginsRelativeArrangement = true
+        row4.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
         
         
         stackView.addArrangedSubview(row1)
