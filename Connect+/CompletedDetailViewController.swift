@@ -22,9 +22,9 @@ class CompletedDetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         //finishtime = "Feb 3, 2020"
-        showtaskname.text = taskname
+        //showtaskname.text = taskname
         
-        showfinishtime.text = "Completed on " + finishtime
+        //showfinishtime.text = "Completed on " + finishtime
         
     }
     

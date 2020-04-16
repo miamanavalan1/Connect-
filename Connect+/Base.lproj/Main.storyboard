@@ -1550,10 +1550,10 @@
             </objects>
             <point key="canvasLocation" x="-1678" y="5283"/>
         </scene>
-        <!--Completed Detail View Controller-->
+        <!--Scroll Appreciation View Controller-->
         <scene sceneID="4n2-1T-WRy">
             <objects>
-                <viewController storyboardIdentifier="CompletedDetailViewController" id="MZE-HZ-7tX" customClass="CompletedDetailViewController" customModule="Connect_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompletedDetailViewController" title="Scroll Appreciation View Controller" id="MZE-HZ-7tX" customClass="CompletedDetailViewController" customModule="Connect_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jpq-tD-KiN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1581,13 +1581,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.84835535289999997" green="0.90130490060000001" blue="0.93333989380000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tabBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kK3-DT-Ote">
-                                <rect key="frame" x="61" y="276" width="303" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.87058823529999996" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qd-vT-1zd">
                                 <rect key="frame" x="61" y="369" width="303" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1627,7 +1620,7 @@
                     <navigationItem key="navigationItem" id="hch-k6-8I1">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="hzH-OQ-2I7">
                             <view key="customView" contentMode="scaleToFill" id="XHq-Y2-isz">
-                                <rect key="frame" x="302" y="5.5" width="39" height="39"/>
+                                <rect key="frame" x="355" y="2.5" width="39" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SR1-kR-unf">
@@ -1643,7 +1636,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="showfinishtime" destination="qsm-Db-Fr9" id="us6-3C-dlL"/>
-                        <outlet property="showtaskname" destination="kK3-DT-Ote" id="wRC-Ux-g5L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L18-ot-dXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

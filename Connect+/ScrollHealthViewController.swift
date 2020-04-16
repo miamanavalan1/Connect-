@@ -27,8 +27,9 @@ class ArrowButton : UIButton {
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .left
         titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 20)
-        setImage(UIImage(systemName: "arrow.right"), for: .normal)
-        imageEdgeInsets = UIEdgeInsets(top: 20, left: 292, bottom: 20, right: 20)
+        //setImage(UIImage(systemName: "arrow.right"), for: .normal)
+        setImage(UIImage(named: "ellipse.png"), for: .normal)
+        imageEdgeInsets = UIEdgeInsets(top: 20, left: 292, bottom: 20, right: 0)
         
     }
     
@@ -101,7 +102,7 @@ class ScrollHealthViewController: UIViewController {
         stackView.spacing = 20
         
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 27, bottom: 0, trailing: 27)
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 27, bottom: 0, trailing: -28)
         
         scrollView.addSubview(stackView)
         
@@ -136,10 +137,10 @@ class ScrollHealthViewController: UIViewController {
         row3.axis = .horizontal
         row4.axis = .horizontal
         
-        row1.distribution = .fill
-        row2.distribution = .fill
-        row3.distribution = .fill
-        row4.distribution = .fill
+        row1.distribution = .equalCentering
+        row2.distribution = .equalCentering
+        row3.distribution = .equalCentering
+        row4.distribution = .equalCentering
         
         row1.spacing = 26
         row2.spacing = 26

@@ -35,7 +35,7 @@ class DotButton: UIButton {
         contentHorizontalAlignment = .left
         titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 20)
         setImage(UIImage(named: "ellipse.png"), for: .normal)
-        imageEdgeInsets = UIEdgeInsets(top: 20, left: 292, bottom: 20, right: 20)
+        imageEdgeInsets = UIEdgeInsets(top: 20, left: 292, bottom: 20, right: 0)
     }
     
     

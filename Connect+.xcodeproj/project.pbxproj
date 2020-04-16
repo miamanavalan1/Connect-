@@ -37,6 +37,7 @@
 		EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA175763242BEC3B00B8A8D6 /* DateCollectionViewCell.swift */; };
 		EA175766242BEC7200B8A8D6 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA175765242BEC7200B8A8D6 /* CalendarVars.swift */; };
 		EA8FBC0524270A2A00E25F45 /* Pods_Connect_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE470013E97EB982ED2521 /* Pods_Connect_.framework */; };
+		EAFB7DA92448228900A8D530 /* ScrollAppreciationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB7DA82448228900A8D530 /* ScrollAppreciationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDetailViewController.swift; sourceTree = "<group>"; };
 		EA175763242BEC3B00B8A8D6 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA175765242BEC7200B8A8D6 /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
+		EAFB7DA82448228900A8D530 /* ScrollAppreciationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAppreciationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				5E3CABD323E8A76B00A2891E /* ViewController.swift */,
 				5E3CABD523E8A76B00A2891E /* Main.storyboard */,
 				5E3CABD823E8A76D00A2891E /* Assets.xcassets */,
+				EAFB7DA82448228900A8D530 /* ScrollAppreciationViewController.swift */,
 				5E3CABDA23E8A76D00A2891E /* LaunchScreen.storyboard */,
 				5E3CABDD23E8A76D00A2891E /* Info.plist */,
 				E427780424217CA700BD2408 /* ScrollHomeViewController.swift */,
@@ -294,6 +297,7 @@
 				5E3CABD423E8A76B00A2891E /* ViewController.swift in Sources */,
 				EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */,
 				5E3CABD023E8A76B00A2891E /* AppDelegate.swift in Sources */,
+				EAFB7DA92448228900A8D530 /* ScrollAppreciationViewController.swift in Sources */,
 				E427781724326D1500BD2408 /* ShoppingToDoDetailViewController.swift in Sources */,
 				E4277811242D4BE700BD2408 /* AddHealthViewController.swift in Sources */,
 				5E3CABD223E8A76B00A2891E /* SceneDelegate.swift in Sources */,
