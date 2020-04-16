@@ -18,6 +18,11 @@ class ArrowButton : UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         //widthAnchor.constraint(equalToConstant: 332).isActive = true
         heightAnchor.constraint(equalToConstant: 60).isActive = true
+        layer.cornerRadius = 10
+        layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        layer.shadowRadius = 4
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 0, height: 0)
         
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .left
@@ -50,8 +55,8 @@ class ScrollHealthViewController: UIViewController {
         pagetitle.heightAnchor.constraint(equalToConstant: 110).isActive = true
         pagetitle.text = "Health"
         pagetitle.textAlignment = .center
-        pagetitle.font = UIFont(name: "Marvel-Bold", size: 30.0)
-        pagetitle.textColor = UIColor.black
+        pagetitle.font = UIFont(name: "Marvel-Bold", size: 40.0)
+        pagetitle.textColor = UIColor.darkGray
         
         //get current date
         //get health log in past 7 days, display in reverse chronological order
@@ -70,15 +75,15 @@ class ScrollHealthViewController: UIViewController {
         date1.textAlignment = .left
         date2.textAlignment = .left
         subtitle.textAlignment = .left
-        date1.font = UIFont(name: "Marvel-Regular", size: 20.0)
-        date2.font = UIFont(name: "Marvel-Regular", size: 20.0)
-        subtitle.font = UIFont(name: "Marvel-Regular", size: 20.0)
-        date1.textColor = UIColor.black
-        date2.textColor = UIColor.black
-        subtitle.textColor = UIColor.black
+        date1.font = UIFont(name: "Marvel-Bold", size: 25.0)
+        date2.font = UIFont(name: "Marvel-Bold", size: 25.0)
+        subtitle.font = UIFont(name: "Marvel-Bold", size: 25.0)
+        date1.textColor = UIColor.darkGray
+        date2.textColor = UIColor.darkGray
+        subtitle.textColor = UIColor.darkGray
         date1.text = "Mar 23, 2020"
         date2.text = "Mar 22, 2020"
-        subtitle.text = "Add health log"
+        subtitle.text = "Add health updates"
         
         self.view.addSubview(scrollView)
         
@@ -93,7 +98,7 @@ class ScrollHealthViewController: UIViewController {
         
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 10
+        stackView.spacing = 20
         
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 27, bottom: 0, trailing: 27)
@@ -204,7 +209,7 @@ class ScrollHealthViewController: UIViewController {
         stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
-        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = false
         
     }
     
