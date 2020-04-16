@@ -44,6 +44,10 @@ class NewsItem : UIView {
             row1.layer.borderWidth = 1.0
             row1.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             row1.layer.cornerRadius = 18
+            row1.layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            row1.layer.shadowRadius = 2
+            row1.layer.shadowOpacity = 0.5
+            row1.layer.shadowOffset = CGSize(width: 0, height: 0)
             row1.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             
             
@@ -55,6 +59,10 @@ class NewsItem : UIView {
             row2.layer.borderWidth = 1.0
             row2.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             row2.layer.cornerRadius = 18
+            row2.layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            row2.layer.shadowRadius = 2
+            row2.layer.shadowOpacity = 0.5
+            row2.layer.shadowOffset = CGSize(width: 0, height: 0)
             row2.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             
             rowtime.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
@@ -79,6 +87,10 @@ class NewsItem : UIView {
             row1.layer.borderWidth = 1.0
             row1.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             row1.layer.cornerRadius = 18
+            row1.layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            row1.layer.shadowRadius = 2
+            row1.layer.shadowOpacity = 0.5
+            row1.layer.shadowOffset = CGSize(width: 0, height: 0)
             row1.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             
             row2.layer.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
@@ -89,6 +101,10 @@ class NewsItem : UIView {
             row2.layer.borderWidth = 1.0
             row2.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             row2.layer.cornerRadius = 18
+            row2.layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            row2.layer.shadowRadius = 2
+            row2.layer.shadowOpacity = 0.5
+            row2.layer.shadowOffset = CGSize(width: 0, height: 0)
             row2.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             
             rowtime.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
