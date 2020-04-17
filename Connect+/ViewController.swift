@@ -13,6 +13,8 @@ import EventKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    //var imageArray = [UIImage(named: "pregnant 1"), UIImage(named: "pregnant 2")]
+    
     @IBOutlet weak var MonthLabel: UILabel!
     
     @IBOutlet weak var Calendar: UICollectionView!

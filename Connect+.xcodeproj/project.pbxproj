@@ -37,7 +37,8 @@
 		EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA175763242BEC3B00B8A8D6 /* DateCollectionViewCell.swift */; };
 		EA175766242BEC7200B8A8D6 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA175765242BEC7200B8A8D6 /* CalendarVars.swift */; };
 		EA8FBC0524270A2A00E25F45 /* Pods_Connect_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE470013E97EB982ED2521 /* Pods_Connect_.framework */; };
-		EAFB7DA92448228900A8D530 /* ScrollAppreciationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB7DA82448228900A8D530 /* ScrollAppreciationViewController.swift */; };
+		EAFB7DBB24493A4600A8D530 /* BabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB7DBA24493A4600A8D530 /* BabyViewController.swift */; };
+		EAFB7DBD24493DFE00A8D530 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB7DBC24493DFE00A8D530 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +79,8 @@
 		E4AB526E23FE05E4001DADB1 /* HealthDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDetailViewController.swift; sourceTree = "<group>"; };
 		EA175763242BEC3B00B8A8D6 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA175765242BEC7200B8A8D6 /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
-		EAFB7DA82448228900A8D530 /* ScrollAppreciationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAppreciationViewController.swift; sourceTree = "<group>"; };
+		EAFB7DBA24493A4600A8D530 /* BabyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyViewController.swift; sourceTree = "<group>"; };
+		EAFB7DBC24493DFE00A8D530 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,9 +152,10 @@
 				5E3CABD323E8A76B00A2891E /* ViewController.swift */,
 				5E3CABD523E8A76B00A2891E /* Main.storyboard */,
 				5E3CABD823E8A76D00A2891E /* Assets.xcassets */,
-				EAFB7DA82448228900A8D530 /* ScrollAppreciationViewController.swift */,
 				5E3CABDA23E8A76D00A2891E /* LaunchScreen.storyboard */,
 				5E3CABDD23E8A76D00A2891E /* Info.plist */,
+				EAFB7DBA24493A4600A8D530 /* BabyViewController.swift */,
+				EAFB7DBC24493DFE00A8D530 /* ImageCollectionViewCell.swift */,
 				E427780424217CA700BD2408 /* ScrollHomeViewController.swift */,
 				E42778062423FAAB00BD2408 /* ScrollTaskViewController.swift */,
 				E42778082429001E00BD2408 /* ScrollHealthViewController.swift */,
@@ -203,6 +206,7 @@
 				TargetAttributes = {
 					5E3CABCB23E8A76B00A2891E = {
 						CreatedOnToolsVersion = 11.2;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -293,16 +297,17 @@
 			files = (
 				E4AB524B23F996AC001DADB1 /* LoginViewController.swift in Sources */,
 				E4AB526D23FDF77D001DADB1 /* AddNormalTastViewController.swift in Sources */,
+				EAFB7DBB24493A4600A8D530 /* BabyViewController.swift in Sources */,
 				E4AB526923FDDF58001DADB1 /* AddCookingTaskViewController.swift in Sources */,
 				5E3CABD423E8A76B00A2891E /* ViewController.swift in Sources */,
 				EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */,
 				5E3CABD023E8A76B00A2891E /* AppDelegate.swift in Sources */,
-				EAFB7DA92448228900A8D530 /* ScrollAppreciationViewController.swift in Sources */,
 				E427781724326D1500BD2408 /* ShoppingToDoDetailViewController.swift in Sources */,
 				E4277811242D4BE700BD2408 /* AddHealthViewController.swift in Sources */,
 				5E3CABD223E8A76B00A2891E /* SceneDelegate.swift in Sources */,
 				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
 				E42778072423FAAB00BD2408 /* ScrollTaskViewController.swift in Sources */,
+				EAFB7DBD24493DFE00A8D530 /* ImageCollectionViewCell.swift in Sources */,
 				E427780524217CA700BD2408 /* ScrollHomeViewController.swift in Sources */,
 				E4AB525123FB462C001DADB1 /* AddShoppingTaskViewController.swift in Sources */,
 				E4AB526F23FE05E4001DADB1 /* HealthDetailViewController.swift in Sources */,
@@ -455,6 +460,7 @@
 			baseConfigurationReference = A8CC47BFE896BFE047D9B561 /* Pods-Connect+.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66C2TC78C7;
 				INFOPLIST_FILE = "Connect+/Info.plist";
@@ -464,6 +470,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Mia-Manavalan.Connect-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,6 +482,7 @@
 			baseConfigurationReference = A0D083D06D0C379A13C8BBF6 /* Pods-Connect+.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66C2TC78C7;
 				INFOPLIST_FILE = "Connect+/Info.plist";
@@ -483,6 +492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Mia-Manavalan.Connect-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
