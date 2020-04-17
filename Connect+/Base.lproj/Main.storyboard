@@ -1557,7 +1557,7 @@
                                                     <rect key="frame" x="67" y="102" width="282" height="250"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-Uk-k7D">
-                                                    <rect key="frame" x="91" y="25" width="120" height="49"/>
+                                                    <rect key="frame" x="89" y="25" width="120" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Marvel-Bold" family="Marvel" pointSize="40"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1568,6 +1568,13 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="21"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tC-AN-HgK">
+                                                    <rect key="frame" x="49" y="508" width="200" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="27"/>
+                                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1583,6 +1590,7 @@
                                             <outlet property="BabyImage" destination="niF-pZ-lXr" id="D36-Uj-HRs"/>
                                             <outlet property="ImageDescription" destination="gN2-1t-Cfn" id="4rH-De-QqH"/>
                                             <outlet property="ImageTitle" destination="Vhl-Uk-k7D" id="7W7-ER-qgJ"/>
+                                            <outlet property="TogoInfo" destination="4tC-AN-HgK" id="IF0-nc-SxN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1953,8 +1961,8 @@
         <image name="alexa" width="28" height="28"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
-        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="bell" width="512" height="512"/>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="cart with squares" width="339" height="232"/>
         <image name="ellipse" width="6" height="20"/>
