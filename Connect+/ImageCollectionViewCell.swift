@@ -10,5 +10,7 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var ImageDescription: UILabel!
+    @IBOutlet weak var ImageTitle: UILabel!
     @IBOutlet weak var BabyImage: UIImageView!
 }
