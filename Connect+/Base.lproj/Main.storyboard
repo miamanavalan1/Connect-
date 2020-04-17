@@ -1566,7 +1566,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gN2-1t-Cfn">
                                                     <rect key="frame" x="34" y="300" width="230" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Assistant-Regular" family="Assistant" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="21"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1578,7 +1578,6 @@
                                                 <constraint firstItem="niF-pZ-lXr" firstAttribute="leading" secondItem="xWv-Hq-oeW" secondAttribute="leading" constant="67" id="S0f-p4-AJR"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.95294117647058818" green="0.89803921568627454" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="customSize" width="416" height="678"/>
                                         <connections>
                                             <outlet property="BabyImage" destination="niF-pZ-lXr" id="D36-Uj-HRs"/>
