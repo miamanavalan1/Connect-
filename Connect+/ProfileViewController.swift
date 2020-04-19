@@ -18,9 +18,9 @@ class InfoButton : UIButton {
         tintColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
         setTitleColor(.darkGray, for: .normal)
-        frame.size = CGSize(width: 332, height: 90)
+        frame.size = CGSize(width: 332, height: 80)
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 90).isActive = true
+        heightAnchor.constraint(equalToConstant: 80).isActive = true
         layer.cornerRadius = 10
         layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         layer.shadowRadius = 4
@@ -43,12 +43,13 @@ class EraseButton : UIButton {
     required init(titleString : String){
         
         super.init(frame: .zero)
-        backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        //backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
         frame.size = CGSize(width: 270, height: 40)
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 40).isActive = true
-        layer.cornerRadius = 40
+        layer.cornerRadius = 20
         layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         layer.shadowRadius = 6
         layer.shadowOpacity = 0.7
@@ -56,7 +57,7 @@ class EraseButton : UIButton {
         
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .center
-        titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 30)
+        titleLabel?.font =  UIFont(name: "Marvel-Bold", size: 25)
     }
     
     required init?(coder: NSCoder) {
@@ -73,7 +74,7 @@ class privacyButton : UIButton {
                frame.size = CGSize(width: 270, height: 40)
                translatesAutoresizingMaskIntoConstraints = false
                heightAnchor.constraint(equalToConstant: 40).isActive = true
-               layer.cornerRadius = 40
+               layer.cornerRadius = 20
                layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
                layer.shadowRadius = 6
                layer.shadowOpacity = 0.7
@@ -81,7 +82,7 @@ class privacyButton : UIButton {
                
                setTitle(titleString, for: .normal)
                contentHorizontalAlignment = .center
-               titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 30)
+               titleLabel?.font =  UIFont(name: "Marvel-Bold", size: 25)
     }
     
     required init?(coder: NSCoder) {
@@ -99,7 +100,7 @@ class logoutButton : UIButton {
            frame.size = CGSize(width: 270, height: 40)
            translatesAutoresizingMaskIntoConstraints = false
            heightAnchor.constraint(equalToConstant: 40).isActive = true
-           layer.cornerRadius = 40
+           layer.cornerRadius = 20
            layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
            layer.shadowRadius = 6
            layer.shadowOpacity = 0.7
@@ -107,7 +108,7 @@ class logoutButton : UIButton {
            
            setTitle(titleString, for: .normal)
            contentHorizontalAlignment = .center
-           titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 30)
+           titleLabel?.font =  UIFont(name: "Marvel-Bold", size: 25)
            //addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
     }
     
@@ -148,7 +149,7 @@ class ProfileViewController: UIViewController {
         let dueDate = InfoButton(titleString: "August 23, 2020\nChange your due date")
         let babyGender = InfoButton(titleString: "Female\nChange gender of baby")
         let connection = InfoButton(titleString: "Connected with John\nEdit connection")
-        let erase = EraseButton(titleString: "ERASE MY DATA")
+        let erase = EraseButton(titleString: "Erase My Data")
         let privacy = privacyButton(titleString: "Privacy Policy")
         let logout = logoutButton(titleString: "Log Out")
         logout.addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
@@ -158,10 +159,13 @@ class ProfileViewController: UIViewController {
         stackView.addArrangedSubview(dueDate)
         stackView.addArrangedSubview(babyGender)
         stackView.addArrangedSubview(connection)
+        stackView.setCustomSpacing(30, after: connection)
         stackView.addArrangedSubview(erase)
+        stackView.setCustomSpacing(10, after: erase)
         stackView.addArrangedSubview(privacy)
+        stackView.setCustomSpacing(10, after: privacy)
         stackView.addArrangedSubview(logout)
-        
+        stackView.setCustomSpacing(10, after: logout)
        
     
         stackView.translatesAutoresizingMaskIntoConstraints = false

@@ -846,7 +846,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klD-8S-upF">
                                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="&lt;"/>
+                                                <state key="normal" title="&lt;">
+                                                    <color key="titleColor" red="0.88627450980392153" green="0.51764705882352935" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="Back:" destination="d3O-q8-ePd" eventType="touchUpInside" id="KGG-kK-vlr"/>
                                                 </connections>
@@ -860,7 +862,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdP-vO-2Lq">
                                                 <rect key="frame" x="220.5" y="0.0" width="80.5" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="&gt;"/>
+                                                <state key="normal" title="&gt;">
+                                                    <color key="titleColor" red="0.88627450980392153" green="0.51764705882352935" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="Next:" destination="d3O-q8-ePd" eventType="touchUpInside" id="RsH-05-g73"/>
                                                 </connections>

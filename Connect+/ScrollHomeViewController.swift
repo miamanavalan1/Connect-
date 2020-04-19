@@ -134,17 +134,17 @@ class ScrollHomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         
-        let profileBtn = UIButton(type: .custom)
+        let profileBtn = UIButton(type: .system)
         profileBtn.setImage(UIImage(systemName: "person.circle"), for: .normal)
         profileBtn.tintColor = .darkGray
         profileBtn.addTarget(self, action: #selector(profileBtnClicked), for: .touchUpInside)
         //profileBtn.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
 
         let barButton = UIBarButtonItem(customView: profileBtn)
-        let btnWidth = barButton.customView?.widthAnchor.constraint(equalToConstant: 30)
-        btnWidth?.isActive = true
-        let btnHeight = barButton.customView?.heightAnchor.constraint(equalToConstant: 30)
-        btnHeight?.isActive = true
+        //let btnWidth = barButton.customView?.widthAnchor.constraint(equalToConstant: 30)
+        //btnWidth?.isActive = true
+        //let btnHeight = barButton.customView?.heightAnchor.constraint(equalToConstant: 30)
+        //btnHeight?.isActive = true
         
         self.navigationItem.rightBarButtonItem = barButton
 
@@ -191,14 +191,14 @@ class ScrollHomeViewController: UIViewController {
         
         homeview.addSubview(tip)
         
-        let logoutbtn: UIButton!
+        /*let logoutbtn: UIButton!
         logoutbtn = UIButton(frame: CGRect(x: 345, y: 577, width: 60, height: 30))
         logoutbtn.setTitle("Log out", for: .normal)
         logoutbtn.setTitleColor(UIColor.darkGray, for: .normal)
         logoutbtn.titleLabel?.font = UIFont(name: "Marvel-Bold", size: 18.0)
         logoutbtn.addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
         
-        homeview.addSubview(logoutbtn)
+        homeview.addSubview(logoutbtn)*/
         
         let newsfeed: UILabel!
         newsfeed = UILabel(frame: CGRect(x: 20, y: 600, width: 270, height: 48.5))
@@ -251,7 +251,7 @@ class ScrollHomeViewController: UIViewController {
         
     }
     
-    @objc func LogoutBtnClicked(_ sender: UIButton) {
+    /*@objc func LogoutBtnClicked(_ sender: UIButton) {
         if let accessToken = AccessToken.current{
             AccessToken.current = nil
             let myLogin = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -260,7 +260,7 @@ class ScrollHomeViewController: UIViewController {
             //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
             //self.present(myLogin!, animated: true, completion: nil)
         }
-    }
+    }*/
     
     @objc func profileBtnClicked(_ sender: UIButton) {
         let next = storyboard?.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
