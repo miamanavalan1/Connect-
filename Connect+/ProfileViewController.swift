@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 class InfoButton : UIButton {
     required init(titleString : String){
@@ -43,9 +45,9 @@ class EraseButton : UIButton {
         super.init(frame: .zero)
         backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
-        frame.size = CGSize(width: 270, height: 80)
+        frame.size = CGSize(width: 270, height: 40)
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        heightAnchor.constraint(equalToConstant: 40).isActive = true
         layer.cornerRadius = 40
         layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         layer.shadowRadius = 6
@@ -66,17 +68,47 @@ class privacyButton : UIButton {
     required init(titleString : String){
         
         super.init(frame: .zero)
-        backgroundColor = .none
-        setTitleColor(.darkGray, for: .normal)
-        frame.size = CGSize(width: 270, height: 20)
-        translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 20).isActive = true
-        layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        layer.borderWidth = 1
-       
-        setTitle(titleString, for: .normal)
-        contentHorizontalAlignment = .center
-        titleLabel?.font =  UIFont(name: "Assistant-Regular", size: 15)
+               backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
+               setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
+               frame.size = CGSize(width: 270, height: 40)
+               translatesAutoresizingMaskIntoConstraints = false
+               heightAnchor.constraint(equalToConstant: 40).isActive = true
+               layer.cornerRadius = 40
+               layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+               layer.shadowRadius = 6
+               layer.shadowOpacity = 0.7
+               layer.shadowOffset = CGSize(width: 0, height: 0)
+               
+               setTitle(titleString, for: .normal)
+               contentHorizontalAlignment = .center
+               titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 30)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class logoutButton : UIButton {
+    required init(titleString : String){
+        
+        super.init(frame: .zero)
+        
+           backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
+           setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
+           frame.size = CGSize(width: 270, height: 40)
+           translatesAutoresizingMaskIntoConstraints = false
+           heightAnchor.constraint(equalToConstant: 40).isActive = true
+           layer.cornerRadius = 40
+           layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+           layer.shadowRadius = 6
+           layer.shadowOpacity = 0.7
+           layer.shadowOffset = CGSize(width: 0, height: 0)
+           
+           setTitle(titleString, for: .normal)
+           contentHorizontalAlignment = .center
+           titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 30)
+           //addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -92,7 +124,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
-
+        
         var pagetitle: UILabel!
         pagetitle = UILabel(frame: CGRect(x: 0, y: 0, width: 414, height: 110))
         pagetitle.heightAnchor.constraint(equalToConstant: 110).isActive = true
@@ -100,6 +132,7 @@ class ProfileViewController: UIViewController {
         pagetitle.textAlignment = .center
         pagetitle.font = UIFont(name: "Marvel-Bold", size: 40.0)
         pagetitle.textColor = UIColor.darkGray
+        
     
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
@@ -117,15 +150,19 @@ class ProfileViewController: UIViewController {
         let connection = InfoButton(titleString: "Connected with John\nEdit connection")
         let erase = EraseButton(titleString: "ERASE MY DATA")
         let privacy = privacyButton(titleString: "Privacy Policy")
+        let logout = logoutButton(titleString: "Log Out")
+        logout.addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
         
     
         stackView.addArrangedSubview(babyName)
         stackView.addArrangedSubview(dueDate)
         stackView.addArrangedSubview(babyGender)
         stackView.addArrangedSubview(connection)
-        stackView.setCustomSpacing(30, after: connection)
         stackView.addArrangedSubview(erase)
         stackView.addArrangedSubview(privacy)
+        stackView.addArrangedSubview(logout)
+        
+       
     
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -134,6 +171,17 @@ class ProfileViewController: UIViewController {
         stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = false
         stackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = false
         
+    }
+    
+    @objc func LogoutBtnClicked(_ sender: UIButton) {
+        if let accessToken = AccessToken.current{
+            AccessToken.current = nil
+            let myLogin = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            let loginDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+            loginDelegate.window?.rootViewController = myLogin
+            //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+            //self.present(myLogin!, animated: true, completion: nil)
+        }
     }
 }
 
