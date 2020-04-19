@@ -841,29 +841,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lno-ZM-FA9">
-                                        <rect key="frame" x="0.0" y="0.0" width="301" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="28"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klD-8S-upF">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="&lt;">
-                                                    <color key="titleColor" red="0.88627450980392153" green="0.51764705882352935" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klD-8S-upF">
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="28"/>
+                                                <color key="tintColor" red="0.8862745098" green="0.51764705879999995" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="&lt;" image="chevron.left.circle" catalog="system">
+                                                    <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="Back:" destination="d3O-q8-ePd" eventType="touchUpInside" id="KGG-kK-vlr"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvZ-H3-bLG">
-                                                <rect key="frame" x="110.5" y="0.0" width="80" height="42"/>
+                                                <rect key="frame" x="110.5" y="0.0" width="80" height="28"/>
                                                 <fontDescription key="fontDescription" name="Marvel-Bold" family="Marvel" pointSize="23"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdP-vO-2Lq">
-                                                <rect key="frame" x="220.5" y="0.0" width="80.5" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="&gt;">
-                                                    <color key="titleColor" red="0.88627450980392153" green="0.51764705882352935" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdP-vO-2Lq">
+                                                <rect key="frame" x="220.5" y="0.0" width="80.5" height="28"/>
+                                                <color key="tintColor" red="0.8862745098" green="0.51764705879999995" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="&gt;" image="chevron.right.circle" catalog="system">
+                                                    <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="Next:" destination="d3O-q8-ePd" eventType="touchUpInside" id="RsH-05-g73"/>
@@ -872,10 +872,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="d2O-Ho-QC1">
-                                        <rect key="frame" x="0.0" y="34" width="301" height="37"/>
+                                        <rect key="frame" x="0.0" y="31" width="301" height="37"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOa-em-5pb">
-                                                <rect key="frame" x="8" y="15" width="25.5" height="6.5"/>
+                                                <rect key="frame" x="8" y="12.5" width="25.5" height="12"/>
                                                 <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1476,6 +1476,8 @@
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="cart with squares" width="339" height="232"/>
+        <image name="chevron.left.circle" catalog="system" width="128" height="121"/>
+        <image name="chevron.right.circle" catalog="system" width="128" height="121"/>
         <image name="ellipse" width="6" height="20"/>
         <image name="facebook" width="11" height="22"/>
         <image name="fingerprint 1" width="76" height="76"/>
