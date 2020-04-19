@@ -134,7 +134,20 @@ class ScrollHomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         
+        let profileBtn = UIButton(type: .custom)
+        profileBtn.setImage(UIImage(systemName: "person.circle"), for: .normal)
+        profileBtn.tintColor = .darkGray
+        profileBtn.addTarget(self, action: #selector(profileBtnClicked), for: .touchUpInside)
+        //profileBtn.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+
+        let barButton = UIBarButtonItem(customView: profileBtn)
+        let btnWidth = barButton.customView?.widthAnchor.constraint(equalToConstant: 30)
+        btnWidth?.isActive = true
+        let btnHeight = barButton.customView?.heightAnchor.constraint(equalToConstant: 30)
+        btnHeight?.isActive = true
         
+        self.navigationItem.rightBarButtonItem = barButton
+
         
         self.view.addSubview(scrollView)
         
@@ -228,20 +241,13 @@ class ScrollHomeViewController: UIViewController {
         stackView.addArrangedSubview(msg4)
         stackView.addArrangedSubview(msg5)
         
-        
-        
-        
-        
-        
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        
-        
         
     }
     
@@ -253,11 +259,15 @@ class ScrollHomeViewController: UIViewController {
             loginDelegate.window?.rootViewController = myLogin
             //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
             //self.present(myLogin!, animated: true, completion: nil)
-            
         }
     }
     
-
+    @objc func profileBtnClicked(_ sender: UIButton) {
+        let next = storyboard?.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
+        self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
