@@ -14,6 +14,7 @@ class ArrowButton : UIButton {
         super.init(frame: .zero)
         backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         tintColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
+        setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
         frame.size = CGSize(width: 332, height: 60)
         translatesAutoresizingMaskIntoConstraints = false
         //widthAnchor.constraint(equalToConstant: 332).isActive = true
@@ -27,9 +28,8 @@ class ArrowButton : UIButton {
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .left
         titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 20)
-        //setImage(UIImage(systemName: "arrow.right"), for: .normal)
-        setImage(UIImage(named: "ellipse.png"), for: .normal)
-        imageEdgeInsets = UIEdgeInsets(top: 20, left: 292, bottom: 20, right: 0)
+        setImage(UIImage(systemName: "chevron.right.2"), for: .normal)
+        imageEdgeInsets = UIEdgeInsets(top: 20, left: 320, bottom: 20, right: 0)
         
     }
     

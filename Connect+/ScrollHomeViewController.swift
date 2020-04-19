@@ -163,7 +163,7 @@ class ScrollHomeViewController: UIViewController {
         title = UILabel(frame: CGRect(x: 52, y: 214, width: 156, height: 49))
         title.text = "Day 40"
         title.textAlignment = .left
-        title.textColor = UIColor.white
+        title.textColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         title.font = UIFont(name: "Marvel-Bold", size: 40.0)
         
         homeview.addSubview(title)
@@ -173,7 +173,7 @@ class ScrollHomeViewController: UIViewController {
         tip.text = "Can't sleep well? It might be time for a body pillow."
         tip.numberOfLines = 3
         tip.textAlignment = .left
-        tip.textColor = UIColor.white
+        tip.textColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         tip.font = UIFont(name: "Assistant-Regular", size: 30.0)
         
         homeview.addSubview(tip)

@@ -40,7 +40,7 @@ class BabyViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.layer.shadowRadius = 10.0
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false;
-        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+        //cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         
         return cell
     }

@@ -20,6 +20,7 @@ class DotButton: UIButton {
         super.init(frame: .zero)
         backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         tintColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
+        setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
         layer.cornerRadius = 10
         layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         layer.shadowRadius = 4
@@ -34,11 +35,9 @@ class DotButton: UIButton {
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .left
         titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 20)
-        setImage(UIImage(named: "ellipse.png"), for: .normal)
-        imageEdgeInsets = UIEdgeInsets(top: 20, left: 292, bottom: 20, right: 0)
+        setImage(UIImage(systemName: "chevron.right.2"), for: .normal)
+        imageEdgeInsets = UIEdgeInsets(top: 20, left: 320, bottom: 20, right: 0)
     }
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
