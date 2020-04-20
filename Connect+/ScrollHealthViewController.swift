@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Foundation
 
 class ArrowButton : UIButton {
+    var detail: String?
+    var id: Int?
+    var created_at: String?
     required init(titleString : String) {
         
         super.init(frame: .zero)
@@ -42,14 +46,48 @@ class ArrowButton : UIButton {
 
 class ScrollHealthViewController: UIViewController {
     
-    var stackView = UIStackView()
-    var scrollView = UIScrollView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
-
+        arrangeview()
+    }
         // Do any additional setup after loading the view.
+    func arrangeview() {
+        var stackView = UIStackView()
+        var scrollView = UIScrollView()
+        
+        struct single_log: Decodable{
+            let title: String
+            let detail: String
+            let id: String
+            let created_at: String
+        }
+        
+        var logs: [single_log] = []
+        
+        var get_log_url = URLComponents(string: "http://127.0.0.1:8000/get_health")!
+        let session = URLSession.shared
+        get_log_url.queryItems = [URLQueryItem(name: "unique_username", value: unique_username)]
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        let task = session.dataTask(with: get_log_url.url!, completionHandler: {data, response, error in
+            print(response)
+            print(data)
+            if error == nil {
+                logs = try! JSONDecoder().decode([single_log].self, from:data!)
+            }
+            semaphore.signal()
+        })
+        task.resume()
+        semaphore.wait()
+        
+        
+        
+        
+        
         
         var pagetitle: UILabel!
         pagetitle = UILabel(frame: CGRect(x: 0, y: 0, width: 414, height: 110))
@@ -63,27 +101,18 @@ class ScrollHealthViewController: UIViewController {
         //get health log in past 7 days, display in reverse chronological order
         //do not display the date if no record is found for the day
         
-        var date1: UILabel!
-        var date2: UILabel!
+        
         var subtitle: UILabel!
         
-        date1 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
-        date2 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
+        
         subtitle = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
-        date1.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        date2.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        
         subtitle.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        date1.textAlignment = .left
-        date2.textAlignment = .left
+        
         subtitle.textAlignment = .left
-        date1.font = UIFont(name: "Marvel-Bold", size: 25.0)
-        date2.font = UIFont(name: "Marvel-Bold", size: 25.0)
+        
         subtitle.font = UIFont(name: "Marvel-Bold", size: 25.0)
-        date1.textColor = UIColor.darkGray
-        date2.textColor = UIColor.darkGray
         subtitle.textColor = UIColor.darkGray
-        date1.text = "Mar 23, 2020"
-        date2.text = "Mar 22, 2020"
         subtitle.text = "Add health updates"
         
         self.view.addSubview(scrollView)
@@ -109,20 +138,26 @@ class ScrollHealthViewController: UIViewController {
         stackView.addArrangedSubview(pagetitle)
         //add dates and logs accordingly
         
-        let log1 = ArrowButton(titleString: "Heartburn")
-        let log2 = ArrowButton(titleString: "Backache")
-        let log3 = ArrowButton(titleString: "Baby Kicking")
         
-        log1.addTarget(self, action: #selector(GoToHealthDetail(_:)), for: .touchUpInside)
-        log2.addTarget(self, action: #selector(GoToHealthDetail(_:)), for: .touchUpInside)
-        log3.addTarget(self, action: #selector(GoToHealthDetail(_:)), for: .touchUpInside)
-        
-        
-        stackView.addArrangedSubview(date1)
-        stackView.addArrangedSubview(log1)
-        stackView.addArrangedSubview(log2)
-        stackView.addArrangedSubview(date2)
-        stackView.addArrangedSubview(log3)
+        //adding from vector logs
+        for item in logs {
+            //date label
+            var date: UILabel!
+            date = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
+            date.heightAnchor.constraint(equalToConstant: 25).isActive = true
+            date.textAlignment = .left
+            date.font = UIFont(name: "Marvel-Bold", size: 25.0)
+            date.textColor = UIColor.darkGray
+            date.text = item.created_at
+            stackView.addArrangedSubview(date)
+            //button
+            let logbutton = ArrowButton(titleString: item.title)
+            logbutton.addTarget(self, action: #selector(GoToHealthDetail(_:)), for: .touchUpInside)
+            logbutton.detail = item.detail
+            logbutton.id = Int(item.id)
+            logbutton.created_at = item.created_at
+            stackView.addArrangedSubview(logbutton)
+        }
         
         //for adding a new health log
         stackView.addArrangedSubview(subtitle)
@@ -212,6 +247,10 @@ class ScrollHealthViewController: UIViewController {
         
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = false
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(refreshControl:)), for: .valueChanged)
+        scrollView.refreshControl = refreshControl
+        
     }
     
     @objc func AddHealthBtnClicked(_ sender: UIButton) {
@@ -221,11 +260,24 @@ class ScrollHealthViewController: UIViewController {
         self.navigationController?.pushViewController(next!, animated: true)
     }
     
-    @objc func GoToHealthDetail(_ sender: UIButton) {
+    @objc func GoToHealthDetail(_ sender: ArrowButton) {
         let healthname = sender.title(for: .normal)
         let next = storyboard?.instantiateViewController(identifier: "HealthDetailViewController") as? HealthDetailViewController
         next?.healthname = healthname!
+        next?.addedtime = sender.created_at!
+        next?.healthdetail = sender.detail!
+        next?.id = sender.id!
+        
         self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func refresh(refreshControl: UIRefreshControl) {
+        print("refreshing")
+        for v in self.view.subviews {
+            v.removeFromSuperview()
+        }
+        arrangeview()
+        refreshControl.endRefreshing()
     }
     /*
     // MARK: - Navigation

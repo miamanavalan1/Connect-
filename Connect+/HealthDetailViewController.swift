@@ -12,6 +12,7 @@ class HealthDetailViewController: UIViewController {
     var healthname = ""
     var healthdetail = ""
     var addedtime = ""
+    var id: Int?
     var showhealthdetail: UILabel!
     @IBOutlet weak var showhealthname: UILabel!
     @IBOutlet weak var showaddedtime: UILabel!
