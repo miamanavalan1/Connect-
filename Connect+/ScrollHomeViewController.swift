@@ -126,13 +126,18 @@ class NewsItem : UIView {
 
 
 class ScrollHomeViewController: UIViewController {
-    var stackView = UIStackView()
-    var scrollView = UIScrollView()
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
+        arrangeview()
+    }
+    
+    func arrangeview() {
+        var stackView = UIStackView()
+        var scrollView = UIScrollView()
         
         let profileBtn = UIButton(type: .system)
         profileBtn.setImage(UIImage(systemName: "person.circle"), for: .normal)
@@ -249,6 +254,10 @@ class ScrollHomeViewController: UIViewController {
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(refreshControl:)), for: .valueChanged)
+        scrollView.refreshControl = refreshControl
+        
     }
     
     /*@objc func LogoutBtnClicked(_ sender: UIButton) {
@@ -265,6 +274,15 @@ class ScrollHomeViewController: UIViewController {
     @objc func profileBtnClicked(_ sender: UIButton) {
         let next = storyboard?.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
         self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func refresh(refreshControl: UIRefreshControl) {
+        print("refreshing")
+        for v in self.view.subviews {
+            v.removeFromSuperview()
+        }
+        arrangeview()
+        refreshControl.endRefreshing()
     }
     
     
