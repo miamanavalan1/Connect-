@@ -10,6 +10,7 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 var unique_username = ""
+import Foundation
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ class LoginViewController: UIViewController {
             let answer: String
             let username: String
         }
-        
+        var semaphore = DispatchSemaphore(value: 0)
         let task = session.dataTask(with: fb_login_url.url!, completionHandler: {data, response, error in
             //print(error)
             print(response)
@@ -64,9 +65,11 @@ class LoginViewController: UIViewController {
             if test.answer == "True" {
                 is_newuser = true
             }
+            semaphore.signal()
         })
         
         task.resume()
+        semaphore.wait()
         
         let myTabBar = self.storyboard?.instantiateViewController(withIdentifier: "myTabBar") as! UITabBarController
         let tbDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate

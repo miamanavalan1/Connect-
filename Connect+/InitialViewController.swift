@@ -9,6 +9,7 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import Foundation
 
 class InitialViewController: UIViewController {
 
@@ -36,6 +37,8 @@ class InitialViewController: UIViewController {
                 let username: String
             }
             
+            var semaphore = DispatchSemaphore(value: 0)
+            
             let task = session.dataTask(with: fb_get_username_url.url!, completionHandler: {data, response, error in
                 print(response)
                 if error != nil {
@@ -47,10 +50,13 @@ class InitialViewController: UIViewController {
                 print(test.username)
                 unique_username = test.username
                 print(unique_username)
+                semaphore.signal()
             })
             task.resume()
             
-            
+            semaphore.wait()
+            print("get username")
+            print(unique_username)
             
             let myTabBar = self.storyboard?.instantiateViewController(withIdentifier: "myTabBar") as! UITabBarController
             let tbDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate

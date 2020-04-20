@@ -9,6 +9,7 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import Foundation
 
 class NewsItem : UIView {
     var currentuser: Bool?
@@ -139,6 +140,37 @@ class ScrollHomeViewController: UIViewController {
         var stackView = UIStackView()
         var scrollView = UIScrollView()
         
+        
+        var get_news_url = URLComponents(string: "http://127.0.0.1:8000/get_news")!
+        let session = URLSession.shared
+        print("username is")
+        print(unique_username)
+        get_news_url.queryItems = [URLQueryItem(name: "unique_username", value: unique_username)]
+        
+        struct single_news: Decodable {
+            let action: String
+            let content: String
+            let created_at: String
+            let created_by: String
+        }
+        
+        var news: [single_news] = []
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        let task = session.dataTask(with: get_news_url.url!, completionHandler: {data, response, error in
+            print(response)
+            
+            if error == nil {
+                news = try! JSONDecoder().decode([single_news].self, from:data!)
+            }
+            semaphore.signal()
+        })
+        task.resume()
+        
+        semaphore.wait()
+        
+        
         let profileBtn = UIButton(type: .system)
         profileBtn.setImage(UIImage(systemName: "person.circle"), for: .normal)
         profileBtn.tintColor = .darkGray
@@ -227,6 +259,7 @@ class ScrollHomeViewController: UIViewController {
         
         
         //News items
+        
         let msg1 = NewsItem(currentuser: true, action: "added a task", content: "Mop the floors", time: "3/30/2020, 10:30 AM", name: "Mary")
         
         let msg2 = NewsItem(currentuser: false, action: "sent a message", content: "You're doing great!!", time: "3/27/2020, 8:30 AM", name: "John")
@@ -245,6 +278,28 @@ class ScrollHomeViewController: UIViewController {
         stackView.addArrangedSubview(msg3)
         stackView.addArrangedSubview(msg4)
         stackView.addArrangedSubview(msg5)
+ 
+        if news.isEmpty {
+            var no_news: UILabel!
+            no_news = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 25))
+            no_news.text = "No news in past 7 days"
+            no_news.heightAnchor.constraint(equalToConstant: 25).isActive = true
+            no_news.textAlignment = .left
+            no_news.font = UIFont(name: "Marvel-Bold", size: 25.0)
+            no_news.textColor = UIColor.darkGray
+            stackView.addArrangedSubview(no_news)
+        } else {
+            for item in news{
+                if item.created_by == unique_username {
+                    var msg = NewsItem(currentuser: true, action: item.action, content: item.content, time: item.created_at, name: item.created_by)
+                    stackView.addArrangedSubview(msg)
+                }else {
+                    var msg = NewsItem(currentuser: false, action: item.action, content: item.content, time: item.created_at, name: item.created_by)
+                    stackView.addArrangedSubview(msg)
+                }
+            }
+        }
+        
         
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
