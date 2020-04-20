@@ -10,6 +10,7 @@ import UIKit
 
 class AddHealthViewController: UIViewController {
 
+    @IBOutlet weak var HealthDetail: UITextField!
     
     @IBOutlet weak var HealthName: UILabel!
     var name = ""
@@ -20,6 +21,25 @@ class AddHealthViewController: UIViewController {
     }
     
     @IBAction func SaveBtnClicked(_ sender: Any) {
+        let session = URLSession.shared
+        let add_log_url = URL(string: "http://127.0.0.1:8000/add_health")!
+        var add_log_request = URLRequest(url: add_log_url)
+        add_log_request.httpMethod = "POST"
+        add_log_request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let parameters = ["unique_username": unique_username, "title": name, "detail": HealthDetail.text] as [String : Any]
+        let j_parameters = try! JSONSerialization.data(withJSONObject: parameters, options: [])
+        add_log_request.httpBody = j_parameters
+        print("parameters are:")
+        print(j_parameters.base64EncodedString())
+        print("end of parameters")
+        
+        let task = session.dataTask(with: add_log_request as URLRequest) {
+            data, response, error in
+            print(response)
+        }
+        task.resume()
+        
+        
         let alertController: UIAlertController
         let okAction = UIAlertAction(title: "OK", style: .default, handler: { action in
             if let viewControllers = self.navigationController?.viewControllers {

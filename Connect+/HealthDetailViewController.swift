@@ -22,10 +22,10 @@ class HealthDetailViewController: UIViewController {
         super.viewDidLoad()
         showhealthname.text = healthname
         
-        addedtime = "Mar 30, 2020"
+        //addedtime = "Mar 30, 2020"
         showaddedtime.text = "Added at " + addedtime
         
-        healthdetail = "health details"
+        //healthdetail = "health details"
         
         showhealthdetail = UILabel(frame: CGRect(x: 37, y: 322, width: 342, height: 293))
         showhealthdetail.text = healthdetail
