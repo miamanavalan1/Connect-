@@ -92,9 +92,11 @@ class PartnerConnectionController: UIViewController, UITextFieldDelegate {
         user_id2.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         
         let ConnectBtn = privacyButton(titleString: "Connect Now")
+        ConnectBtn.addTarget(self, action: #selector(ConnectBtnClicked(_:)), for: .touchUpInside)
         
         stackView.addArrangedSubview(subtitle1)
         stackView.addArrangedSubview(user_id1)
+        stackView.setCustomSpacing(40, after: user_id1)
         stackView.addArrangedSubview(subtitle2)
         stackView.addArrangedSubview(user_id2)
         stackView.setCustomSpacing(40, after: user_id2)
@@ -106,5 +108,10 @@ class PartnerConnectionController: UIViewController, UITextFieldDelegate {
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = false
         stackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = false
+    }
+    
+    @objc func ConnectBtnClicked(_ sender: UIButton) {
+        let next = storyboard?.instantiateViewController(identifier: "ConnectAlertController") as? ConnectAlertController
+        self.navigationController?.pushViewController(next!, animated: true)
     }
 }
