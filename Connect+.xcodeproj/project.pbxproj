@@ -40,6 +40,8 @@
 		EA947102244CC0D10035873D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA947101244CC0D10035873D /* ProfileViewController.swift */; };
 		EAE0BD892458A58500BF9A03 /* PartnerConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0BD882458A58500BF9A03 /* PartnerConnectionController.swift */; };
 		EAE0BD8B2458B82E00BF9A03 /* ConnectAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0BD8A2458B82E00BF9A03 /* ConnectAlertController.swift */; };
+		EAE0BD8D2458CCAA00BF9A03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0BD8C2458CCAA00BF9A03 /* SignUpViewController.swift */; };
+		EAE0BD912458CCF500BF9A03 /* LogInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0BD902458CCF500BF9A03 /* LogInEmailViewController.swift */; };
 		EAFB7DBB24493A4600A8D530 /* BabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB7DBA24493A4600A8D530 /* BabyViewController.swift */; };
 		EAFB7DBD24493DFE00A8D530 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB7DBC24493DFE00A8D530 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		EA947101244CC0D10035873D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EAE0BD882458A58500BF9A03 /* PartnerConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerConnectionController.swift; sourceTree = "<group>"; };
 		EAE0BD8A2458B82E00BF9A03 /* ConnectAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectAlertController.swift; sourceTree = "<group>"; };
+		EAE0BD8C2458CCAA00BF9A03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		EAE0BD902458CCF500BF9A03 /* LogInEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInEmailViewController.swift; sourceTree = "<group>"; };
 		EAFB7DBA24493A4600A8D530 /* BabyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyViewController.swift; sourceTree = "<group>"; };
 		EAFB7DBC24493DFE00A8D530 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +149,6 @@
 				5E3CABD123E8A76B00A2891E /* SceneDelegate.swift */,
 				EA175765242BEC7200B8A8D6 /* CalendarVars.swift */,
 				E4AB525223FB4F64001DADB1 /* InitialViewController.swift */,
-				E4AB524A23F996AC001DADB1 /* LoginViewController.swift */,
 				E4AB524E23F99D38001DADB1 /* TabBarViewController.swift */,
 				E4AB525023FB462C001DADB1 /* AddShoppingTaskViewController.swift */,
 				E4AB526823FDDF58001DADB1 /* AddCookingTaskViewController.swift */,
@@ -160,6 +163,9 @@
 				5E3CABD823E8A76D00A2891E /* Assets.xcassets */,
 				5E3CABDA23E8A76D00A2891E /* LaunchScreen.storyboard */,
 				5E3CABDD23E8A76D00A2891E /* Info.plist */,
+				E4AB524A23F996AC001DADB1 /* LoginViewController.swift */,
+				EAE0BD8C2458CCAA00BF9A03 /* SignUpViewController.swift */,
+				EAE0BD902458CCF500BF9A03 /* LogInEmailViewController.swift */,
 				EAE0BD8A2458B82E00BF9A03 /* ConnectAlertController.swift */,
 				EAE0BD882458A58500BF9A03 /* PartnerConnectionController.swift */,
 				EA947101244CC0D10035873D /* ProfileViewController.swift */,
@@ -308,6 +314,7 @@
 				E4AB526D23FDF77D001DADB1 /* AddNormalTastViewController.swift in Sources */,
 				EAFB7DBB24493A4600A8D530 /* BabyViewController.swift in Sources */,
 				E4AB526923FDDF58001DADB1 /* AddCookingTaskViewController.swift in Sources */,
+				EAE0BD8D2458CCAA00BF9A03 /* SignUpViewController.swift in Sources */,
 				5E3CABD423E8A76B00A2891E /* ViewController.swift in Sources */,
 				EA175764242BEC3B00B8A8D6 /* DateCollectionViewCell.swift in Sources */,
 				EA947102244CC0D10035873D /* ProfileViewController.swift in Sources */,
@@ -318,6 +325,7 @@
 				E4AB524F23F99D38001DADB1 /* TabBarViewController.swift in Sources */,
 				E42778072423FAAB00BD2408 /* ScrollTaskViewController.swift in Sources */,
 				EAE0BD8B2458B82E00BF9A03 /* ConnectAlertController.swift in Sources */,
+				EAE0BD912458CCF500BF9A03 /* LogInEmailViewController.swift in Sources */,
 				EAFB7DBD24493DFE00A8D530 /* ImageCollectionViewCell.swift in Sources */,
 				E427780524217CA700BD2408 /* ScrollHomeViewController.swift in Sources */,
 				EAE0BD892458A58500BF9A03 /* PartnerConnectionController.swift in Sources */,

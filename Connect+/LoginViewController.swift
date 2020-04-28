@@ -11,13 +11,14 @@ import FacebookCore
 import FacebookLogin
 var unique_username = ""
 import Foundation
-class LoginViewController: UIViewController {
 
+
+
+class LoginViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
     }
     
     func loginManagerDidComplete(_ result: LoginResult) {
@@ -95,6 +96,17 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func SignUpBtnClicked(_ sender: Any) {
+        
+        let SignUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        let tbDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        tbDelegate.window?.rootViewController = SignUpViewController
+        
+    }
+    
+    
+    
     
     /*
     // MARK: - Navigation
