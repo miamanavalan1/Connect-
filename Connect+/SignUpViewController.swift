@@ -16,6 +16,14 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         
+        var emptytitle: UILabel!
+        emptytitle = UILabel(frame: CGRect(x: 0, y: 0, width: 414, height: 35))
+        emptytitle.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        emptytitle.text = "Sign Up"
+        emptytitle.textAlignment = .center
+        emptytitle.font = UIFont(name: "Marvel-Bold", size: 40.0)
+        emptytitle.textColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
+        
         var pagetitle: UILabel!
         pagetitle = UILabel(frame: CGRect(x: 0, y: 0, width: 414, height: 110))
         pagetitle.heightAnchor.constraint(equalToConstant: 110).isActive = true
@@ -33,32 +41,33 @@ class SignUpViewController: UIViewController {
         
         self.view.addSubview(stackView)
         
+        stackView.addArrangedSubview(emptytitle)
         stackView.addArrangedSubview(pagetitle)
         
 
         var subtitle1: UILabel!
-        subtitle1 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
-        subtitle1.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        subtitle1 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 20))
+        subtitle1.heightAnchor.constraint(equalToConstant: 20).isActive = true
         subtitle1.textAlignment = .left
         subtitle1.font = UIFont(name: "Marvel-Bold", size: 20.0)
         subtitle1.textColor = UIColor.darkGray
-        subtitle1.text = "First Name:"
+        subtitle1.text = "Name:"
         
-        let firstname =  UITextField(frame: CGRect(x: 0, y: 0, width: 414, height: 40))
-        firstname.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        let name =  UITextField(frame: CGRect(x: 0, y: 0, width: 414, height: 40))
+        name.heightAnchor.constraint(equalToConstant: 40).isActive = true
         //firstname.placeholder = "Firs..."
-        firstname.font = UIFont(name: "Assistant-Regular", size: 20)
-        firstname.textColor = UIColor.darkGray
-        firstname.borderStyle = UITextField.BorderStyle.roundedRect
-        firstname.autocorrectionType = UITextAutocorrectionType.no
-        firstname.keyboardType = UIKeyboardType.default
-        firstname.returnKeyType = UIReturnKeyType.done
-        firstname.clearButtonMode = UITextField.ViewMode.whileEditing
-        firstname.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        name.font = UIFont(name: "Assistant-Regular", size: 20)
+        name.textColor = UIColor.darkGray
+        name.borderStyle = UITextField.BorderStyle.roundedRect
+        name.autocorrectionType = UITextAutocorrectionType.no
+        name.keyboardType = UIKeyboardType.default
+        name.returnKeyType = UIReturnKeyType.done
+        name.clearButtonMode = UITextField.ViewMode.whileEditing
+        name.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         
-        var subtitle2: UILabel!
-        subtitle2 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
-        subtitle2.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        /*var subtitle2: UILabel!
+        subtitle2 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 20))
+        subtitle2.heightAnchor.constraint(equalToConstant: 20).isActive = true
         subtitle2.textAlignment = .left
         subtitle2.font = UIFont(name: "Marvel-Bold", size: 20.0)
         subtitle2.textColor = UIColor.darkGray
@@ -74,11 +83,11 @@ class SignUpViewController: UIViewController {
         lastname.keyboardType = UIKeyboardType.default
         lastname.returnKeyType = UIReturnKeyType.done
         lastname.clearButtonMode = UITextField.ViewMode.whileEditing
-        lastname.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        lastname.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center*/
         
         var subtitle3: UILabel!
-        subtitle3 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
-        subtitle3.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        subtitle3 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 20))
+        subtitle3.heightAnchor.constraint(equalToConstant: 20).isActive = true
         subtitle3.textAlignment = .left
         subtitle3.font = UIFont(name: "Marvel-Bold", size: 20.0)
         subtitle3.textColor = UIColor.darkGray
@@ -97,8 +106,8 @@ class SignUpViewController: UIViewController {
         email.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         
         var subtitle4: UILabel!
-        subtitle4 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
-        subtitle4.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        subtitle4 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 20))
+        subtitle4.heightAnchor.constraint(equalToConstant: 20).isActive = true
         subtitle4.textAlignment = .left
         subtitle4.font = UIFont(name: "Marvel-Bold", size: 20.0)
         subtitle4.textColor = UIColor.darkGray
@@ -118,8 +127,8 @@ class SignUpViewController: UIViewController {
         password.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         
         var subtitle5: UILabel!
-        subtitle5 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 25))
-        subtitle5.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        subtitle5 = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 20))
+        subtitle5.heightAnchor.constraint(equalToConstant: 20).isActive = true
         subtitle5.textAlignment = .left
         subtitle5.font = UIFont(name: "Marvel-Bold", size: 20.0)
         subtitle5.textColor = UIColor.darkGray
@@ -143,10 +152,8 @@ class SignUpViewController: UIViewController {
         GoBackBtn.addTarget(self, action: #selector(GoBackBtnClicked(_:)), for: .touchUpInside)
         
         stackView.addArrangedSubview(subtitle1)
-        stackView.addArrangedSubview(firstname)
+        stackView.addArrangedSubview(name)
         //stackView.setCustomSpacing(40, after: firstname)
-        stackView.addArrangedSubview(subtitle2)
-        stackView.addArrangedSubview(lastname)
         //stackView.setCustomSpacing(40, after: lastname)
         stackView.addArrangedSubview(subtitle3)
         stackView.addArrangedSubview(email)
@@ -174,9 +181,7 @@ class SignUpViewController: UIViewController {
         let LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         let tbDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
         tbDelegate.window?.rootViewController = LoginViewController
-        
     }
-    
 }
 
 
