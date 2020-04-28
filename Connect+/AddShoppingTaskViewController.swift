@@ -15,7 +15,6 @@ class AddShoppingTaskViewController: UIViewController {
     
     @IBOutlet weak var title_diaplay: UILabel!
     @IBOutlet weak var deadline: UITextField!
-    
     @IBOutlet weak var detail: UITextField!
     
     var deadline_to_send = ""
@@ -49,9 +48,6 @@ class AddShoppingTaskViewController: UIViewController {
         var add_task_request = URLRequest(url: add_task_url)
         add_task_request.httpMethod = "POST"
         add_task_request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        print(unique_username)
-        print(deadline_to_send)
-        print(detail.text)
         
         let parameters = ["unique_username": unique_username, "deadline": deadline_to_send, "title": "Grocery Shopping", "detail": detail.text] as [String : Any]
         let j_parameters = try! JSONSerialization.data(withJSONObject: parameters, options: [])

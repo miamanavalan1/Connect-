@@ -131,7 +131,7 @@ class ScrollHealthViewController: UIViewController {
         stackView.spacing = 20
         
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 27, bottom: 0, trailing: -28)
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 27, bottom: 20, trailing: -28)
         
         scrollView.addSubview(stackView)
         
