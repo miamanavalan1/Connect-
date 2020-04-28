@@ -20,8 +20,10 @@ class AddShoppingTaskViewController: UIViewController {
     
     var deadline_to_send = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        detail.text = ""
 
         // Do any additional setup after loading the view.
         let datepicker = UIDatePicker()
@@ -47,6 +49,10 @@ class AddShoppingTaskViewController: UIViewController {
         var add_task_request = URLRequest(url: add_task_url)
         add_task_request.httpMethod = "POST"
         add_task_request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        print(unique_username)
+        print(deadline_to_send)
+        print(detail.text)
+        
         let parameters = ["unique_username": unique_username, "deadline": deadline_to_send, "title": "Grocery Shopping", "detail": detail.text] as [String : Any]
         let j_parameters = try! JSONSerialization.data(withJSONObject: parameters, options: [])
         add_task_request.httpBody = j_parameters

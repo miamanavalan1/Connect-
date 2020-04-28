@@ -125,10 +125,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPn-pQ-Qft">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Details..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPn-pQ-Qft">
                                 <rect key="frame" x="37" y="393" width="326" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Assistant-Regular" family="Assistant" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -140,6 +140,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="deadline" destination="jcF-tp-y4l" id="K90-Vf-j7Z"/>
+                        <outlet property="detail" destination="LPn-pQ-Qft" id="JTi-u3-1Ee"/>
                         <outlet property="title_diaplay" destination="Qcm-fe-6Kr" id="5QS-Ba-UFQ"/>
                     </connections>
                 </viewController>
