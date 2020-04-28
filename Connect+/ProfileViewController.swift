@@ -148,12 +148,12 @@ class ProfileViewController: UIViewController {
         let babyName = InfoButton(titleString: "Grace\nChange the name of your baby")
         let dueDate = InfoButton(titleString: "August 23, 2020\nChange your due date")
         let babyGender = InfoButton(titleString: "Female\nChange gender of baby")
-        let connection = InfoButton(titleString: "Connected with John\nEdit connection")
+        let connection = InfoButton(titleString: "Not connected yet\nAdd your partner's account")
         let erase = EraseButton(titleString: "Erase My Data")
         let privacy = privacyButton(titleString: "Privacy Policy")
         let logout = logoutButton(titleString: "Log Out")
+        connection.addTarget(self, action: #selector(editConnectBtnClicked(_:)), for: .touchUpInside)
         logout.addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
-        
     
         stackView.addArrangedSubview(babyName)
         stackView.addArrangedSubview(dueDate)
@@ -186,6 +186,11 @@ class ProfileViewController: UIViewController {
             //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
             //self.present(myLogin!, animated: true, completion: nil)
         }
+    }
+    
+    @objc func editConnectBtnClicked(_ sender: UIButton) {
+        let next = storyboard?.instantiateViewController(identifier: "PartnerConnectionController") as? PartnerConnectionController
+        self.navigationController?.pushViewController(next!, animated: true)
     }
 }
 
