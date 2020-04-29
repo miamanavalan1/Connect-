@@ -98,14 +98,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func SignUpBtnClicked(_ sender: Any) {
-        
         let SignUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         let tbDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
         tbDelegate.window?.rootViewController = SignUpViewController
-        
     }
     
-    
+    @IBAction func LogInBtnClicked(_ sender: Any) {
+        let LogInEmailViewController = self.storyboard?.instantiateViewController(withIdentifier: "LogInEmailViewController") as! LogInEmailViewController
+        let tbDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        tbDelegate.window?.rootViewController = LogInEmailViewController
+    }
     
     
     /*
