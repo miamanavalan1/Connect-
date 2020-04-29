@@ -19,9 +19,9 @@ class InfoButton : UIButton {
         tintColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
         setTitleColor(.darkGray, for: .normal)
-        frame.size = CGSize(width: 332, height: 80)
+        frame.size = CGSize(width: 332, height: 65)
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        heightAnchor.constraint(equalToConstant: 65).isActive = true
         layer.cornerRadius = 10
         layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         layer.shadowRadius = 4
@@ -30,7 +30,36 @@ class InfoButton : UIButton {
         
         setTitle(titleString, for: .normal)
         contentHorizontalAlignment = .left
-        titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 20)
+        titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 18)
+        setImage(UIImage(systemName: "chevron.right.2"), for: .normal)
+        imageEdgeInsets = UIEdgeInsets(top: 20, left: 320, bottom: 20, right: 0)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class CntButton : UIButton {
+    required init(titleString : String){
+        
+        super.init(frame: .zero)
+        backgroundColor = #colorLiteral(red: 0.8392156863, green: 0.8980392157, blue: 0.9294117647, alpha: 1)
+        tintColor = #colorLiteral(red: 0.9098039216, green: 0.7176470588, blue: 0.7294117647, alpha: 1)
+        titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+        setTitleColor(.darkGray, for: .normal)
+        frame.size = CGSize(width: 332, height: 65)
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: 65).isActive = true
+        layer.cornerRadius = 10
+        layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        layer.shadowRadius = 4
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        setTitle(titleString, for: .normal)
+        contentHorizontalAlignment = .left
+        titleLabel?.font =  UIFont(name: "Assistant-Bold", size: 18)
         setImage(UIImage(systemName: "chevron.right.2"), for: .normal)
         imageEdgeInsets = UIEdgeInsets(top: 20, left: 320, bottom: 20, right: 0)
     }
@@ -146,10 +175,11 @@ class ProfileViewController: UIViewController {
         
         stackView.addArrangedSubview(pagetitle)
     
+        let nickName = InfoButton(titleString: "Martha, Mother\nChange your nickname and role")
         let babyName = InfoButton(titleString: "Grace\nChange the name of your baby")
         let dueDate = InfoButton(titleString: "August 23, 2020\nChange your due date")
         let babyGender = InfoButton(titleString: "Female\nChange gender of baby")
-        let connection = InfoButton(titleString: "Not connected yet\nAdd your partner's account")
+        let connection = CntButton(titleString: "Not connected yet\nAdd your partner's account")
         let erase = EraseButton(titleString: "Erase My Data")
         let privacy = privacyButton(titleString: "Privacy Policy")
         let logout = logoutButton(titleString: "Log Out")
@@ -157,6 +187,7 @@ class ProfileViewController: UIViewController {
         logout.addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
         erase.addTarget(self, action: #selector(EraseBtnClicked(_:)), for: .touchUpInside)
     
+        stackView.addArrangedSubview(nickName)
         stackView.addArrangedSubview(babyName)
         stackView.addArrangedSubview(dueDate)
         stackView.addArrangedSubview(babyGender)
