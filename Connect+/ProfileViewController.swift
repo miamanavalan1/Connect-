@@ -9,6 +9,7 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import Foundation
 
 class InfoButton : UIButton {
     required init(titleString : String){
@@ -154,6 +155,7 @@ class ProfileViewController: UIViewController {
         let logout = logoutButton(titleString: "Log Out")
         connection.addTarget(self, action: #selector(editConnectBtnClicked(_:)), for: .touchUpInside)
         logout.addTarget(self, action: #selector(LogoutBtnClicked(_:)), for: .touchUpInside)
+        erase.addTarget(self, action: #selector(EraseBtnClicked(_:)), for: .touchUpInside)
     
         stackView.addArrangedSubview(babyName)
         stackView.addArrangedSubview(dueDate)
@@ -191,6 +193,31 @@ class ProfileViewController: UIViewController {
     @objc func editConnectBtnClicked(_ sender: UIButton) {
         let next = storyboard?.instantiateViewController(identifier: "PartnerConnectionController") as? PartnerConnectionController
         self.navigationController?.pushViewController(next!, animated: true)
+    }
+    
+    @objc func EraseBtnClicked(_ sender: UIButton) {
+        var erase_url = URLComponents(string: "http://127.0.0.1:8000/erase_data")!
+        let session = URLSession.shared
+        erase_url.queryItems = [URLQueryItem(name: "unique_username", value: unique_username)]
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        let task = session.dataTask(with: erase_url.url!, completionHandler: {data, response, error in
+            print(response)
+            print(data)
+            semaphore.signal()
+        })
+        task.resume()
+        
+        semaphore.wait()
+        
+        if let accessToken = AccessToken.current{
+            AccessToken.current = nil
+            let myLogin = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            let loginDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+            loginDelegate.window?.rootViewController = myLogin
+            //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+            //self.present(myLogin!, animated: true, completion: nil)
+        }
     }
 }
 
