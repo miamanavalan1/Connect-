@@ -80,7 +80,7 @@ class PartnerConnectionController: UIViewController, UITextFieldDelegate {
         subtitle2.textColor = UIColor.darkGray
         subtitle2.text = "Enter your partner's user ID:"
 
-        let user_id2 =  UITextField(frame: CGRect(x: 0, y: 0, width: 414, height: 40))
+        user_id2 =  UITextField(frame: CGRect(x: 0, y: 0, width: 414, height: 40))
         user_id2.heightAnchor.constraint(equalToConstant: 40).isActive = true
         user_id2.placeholder = "Partner's user ID..."
         user_id2.font = UIFont(name: "Assistant-Regular", size: 20)

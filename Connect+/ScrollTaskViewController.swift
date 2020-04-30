@@ -260,10 +260,10 @@ class ScrollTaskViewController: UIViewController {
         stackView.addArrangedSubview(row3)
         
         
-        let sbtn1 = SquareButton(titleString: "Grocery\nShopping")
-        let sbtn2 = SquareButton(titleString: "Bathroom\nCleaning")
-        let sbtn3 = SquareButton(titleString: "Mopping\nFloors")
-        let sbtn4 = SquareButton(titleString: "Kitchen\nCleaning")
+        let sbtn1 = SquareButton(titleString: "Grocery Shopping")
+        let sbtn2 = SquareButton(titleString: "Bathroom Cleaning")
+        let sbtn3 = SquareButton(titleString: "Mopping Floors")
+        let sbtn4 = SquareButton(titleString: "Kitchen Cleaning")
         let sbtn5 = SquareButton(titleString: "Cooking")
         let sbtn6 = SquareButton(titleString: "Dishes")
         

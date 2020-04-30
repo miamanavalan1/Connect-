@@ -259,25 +259,24 @@ class ScrollHomeViewController: UIViewController {
         
         
         //News items
+        let msg1 = NewsItem(currentuser: true, action: "added a task", content: "Grocery Shopping", time: "4/25/2020, 10:30", name: "Mary")
         
-        let msg1 = NewsItem(currentuser: true, action: "added a task", content: "Mop the floors", time: "3/30/2020, 10:30 AM", name: "Mary")
+        let msg2 = NewsItem(currentuser: false, action: "sent a message", content: "Grocery shopping finished!", time: "4/25/2020, 18:30", name: "John")
         
-        let msg2 = NewsItem(currentuser: false, action: "sent a message", content: "You're doing great!!", time: "3/27/2020, 8:30 AM", name: "John")
+        let msg3 = NewsItem(currentuser: false, action: "sent a message", content: "How are u doing today?", time: "4/26/2020, 13:30", name: "John")
         
-        let msg3 = NewsItem(currentuser: false, action: "sent a message", content: "How are u doing today?", time: "3/26/2020, 1:30 PM", name: "John")
+        let msg4 = NewsItem(currentuser: true, action: "sent a message", content: "All good!!\t", time: "4/26/2020, 14:30", name: "Mary")
         
-        let msg4 = NewsItem(currentuser: false, action: "sent a message", content: "Grocery shopping finished!", time: "3/25/2020, 8:30 PM", name: "John")
+        let msg5 = NewsItem(currentuser: false, action: "sent a message", content: "You're doing great!!", time: "4/27/2020, 8:30", name: "John")
         
-        let msg5 = NewsItem(currentuser: true, action: "added a task", content: "Grocery Shopping", time: "3/25/2020, 10:30 AM", name: "Mary")
-        
-        let msg6 = NewsItem(currentuser: true, action: "sent a message", content: "All good!!\t", time: "3/26/2020, 2:30 PM", name: "Mary")
+        let msg6 = NewsItem(currentuser: true, action: "added a task", content: "Mop the floors", time: "4/27/2020, 10:30", name: "Mary")
         
         stackView.addArrangedSubview(msg1)
         stackView.addArrangedSubview(msg2)
-        stackView.addArrangedSubview(msg6)
         stackView.addArrangedSubview(msg3)
         stackView.addArrangedSubview(msg4)
         stackView.addArrangedSubview(msg5)
+        stackView.addArrangedSubview(msg6)
  
         if news.isEmpty {
             var no_news: UILabel!
