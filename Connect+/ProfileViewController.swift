@@ -227,28 +227,39 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func EraseBtnClicked(_ sender: UIButton) {
-        var erase_url = URLComponents(string: "http://127.0.0.1:8000/erase_data")!
-        let session = URLSession.shared
-        erase_url.queryItems = [URLQueryItem(name: "unique_username", value: unique_username)]
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        let task = session.dataTask(with: erase_url.url!, completionHandler: {data, response, error in
-            print(response)
-            print(data)
-            semaphore.signal()
+        let alertController: UIAlertController
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            var erase_url = URLComponents(string: "http://127.0.0.1:8000/erase_data")!
+            let session = URLSession.shared
+            erase_url.queryItems = [URLQueryItem(name: "unique_username", value: unique_username)]
+            let semaphore = DispatchSemaphore(value: 0)
+            
+            let task = session.dataTask(with: erase_url.url!, completionHandler: {data, response, error in
+                print(response)
+                print(data)
+                semaphore.signal()
+            })
+            task.resume()
+            
+            semaphore.wait()
+            
+            if let accessToken = AccessToken.current{
+                AccessToken.current = nil
+                let myLogin = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                let loginDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+                loginDelegate.window?.rootViewController = myLogin
+                //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+                //self.present(myLogin!, animated: true, completion: nil)
+            }
         })
-        task.resume()
+        let noAction = UIAlertAction(title: "No", style: .default)
+        alertController = UIAlertController(title: "Please confirm", message: "Are you sure to erase all your data, including your account?", preferredStyle: .alert)
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        self.present(alertController, animated: true, completion: nil)
         
-        semaphore.wait()
         
-        if let accessToken = AccessToken.current{
-            AccessToken.current = nil
-            let myLogin = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            let loginDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
-            loginDelegate.window?.rootViewController = myLogin
-            //let myLogin = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
-            //self.present(myLogin!, animated: true, completion: nil)
-        }
     }
 }
 
