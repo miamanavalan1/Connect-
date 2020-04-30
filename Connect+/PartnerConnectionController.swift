@@ -112,15 +112,38 @@ class PartnerConnectionController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func ConnectBtnClicked(_ sender: UIButton) {
-        /*
-        if (user_id2.text == nil || user_id2.text == "") {
-            let alertController: UIAlertController
-            let okAction = UIAlertAction(title: "OK", style: .default)
-            alertController = UIAlertController(title: "Empty Id", message: "Please enter your partner's Id shown on his/her profile page.", preferredStyle: .alert)
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
-        } else{*/
+        
         if user_id2 != nil {
+            /*
+            var add_partner_url = URLComponents(string: "http://127.0.0.1:8000/add_partner")!
+            let session = URLSession.shared
+            add_partner_url.queryItems = [URLQueryItem(name: "unique_username", value: unique_username), URLQueryItem(name: "partner_name", value: user_id2.text)]
+            struct rst: Decodable{
+                let message: String
+            }
+            var alerttext = ""
+            let semaphore = DispatchSemaphore(value: 0)
+            let task = session.dataTask(with: add_partner_url.url!, completionHandler: {data, response, error in
+                let result: rst = try! JSONDecoder().decode(rst.self, from: data!)
+                alerttext = result.message
+                semaphore.signal()
+            })
+            task.resume()
+            
+            semaphore.wait()
+            
+            if alerttext == "You are now connected!" {
+                let next = storyboard?.instantiateViewController(identifier: "ConnectAlertController") as? ConnectAlertController
+                self.navigationController?.pushViewController(next!, animated: true)
+            } else {
+                let alertController: UIAlertController
+                let okAction = UIAlertAction(title: "OK", style: .default)
+                alertController = UIAlertController(title: "Invalid Id", message: "Please enter your partner's Id shown on his/her profile page.", preferredStyle: .alert)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            */
+            
             let next = storyboard?.instantiateViewController(identifier: "ConnectAlertController") as? ConnectAlertController
             self.navigationController?.pushViewController(next!, animated: true)
         } else {
