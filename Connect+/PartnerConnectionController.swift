@@ -36,6 +36,7 @@ class AccountButton : UIButton {
 class PartnerConnectionController: UIViewController, UITextFieldDelegate {
 
     var stackView = UIStackView()
+    var user_id2: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,8 +112,25 @@ class PartnerConnectionController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func ConnectBtnClicked(_ sender: UIButton) {
-        let next = storyboard?.instantiateViewController(identifier: "ConnectAlertController") as? ConnectAlertController
-        self.navigationController?.pushViewController(next!, animated: true)
+        /*
+        if (user_id2.text == nil || user_id2.text == "") {
+            let alertController: UIAlertController
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertController = UIAlertController(title: "Empty Id", message: "Please enter your partner's Id shown on his/her profile page.", preferredStyle: .alert)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else{*/
+        if user_id2 != nil {
+            let next = storyboard?.instantiateViewController(identifier: "ConnectAlertController") as? ConnectAlertController
+            self.navigationController?.pushViewController(next!, animated: true)
+        } else {
+            let alertController: UIAlertController
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertController = UIAlertController(title: "Empty Id", message: "Please enter your partner's Id shown on his/her profile page.", preferredStyle: .alert)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
     }
 }
 
