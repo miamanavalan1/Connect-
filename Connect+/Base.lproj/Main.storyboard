@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t93-Su-0lA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t93-Su-0lA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1089,6 +1089,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="button" destination="5Qd-vT-1zd" id="2Jc-6d-nqc"/>
                         <outlet property="showfinishtime" destination="qsm-Db-Fr9" id="us6-3C-dlL"/>
                     </connections>
                 </viewController>
@@ -1349,21 +1350,21 @@
         <image name="Line 18" width="86" height="2"/>
         <image name="Martha" width="96" height="120"/>
         <image name="alexa" width="28" height="28"/>
-        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="bell" catalog="system" width="64" height="62"/>
         <image name="bell" width="512" height="512"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="cart with squares" width="339" height="232"/>
-        <image name="chevron.left.circle" catalog="system" width="128" height="121"/>
-        <image name="chevron.right.circle" catalog="system" width="128" height="121"/>
+        <image name="chevron.left.circle" catalog="system" width="64" height="60"/>
+        <image name="chevron.right.circle" catalog="system" width="64" height="60"/>
         <image name="ellipse" width="6" height="20"/>
         <image name="facebook" width="11" height="22"/>
         <image name="fingerprint 1" width="76" height="76"/>
         <image name="google" width="512" height="512"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="pencil.tip" catalog="system" width="99" height="128"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="sun.min" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="pencil.tip" catalog="system" width="48" height="64"/>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
+        <image name="sun.min" catalog="system" width="64" height="60"/>
         <image name="yumly" width="234" height="234"/>
     </resources>
 </document>
